@@ -1,64 +1,39 @@
 <div class="aero-desktop">
-
-  <!-- =========================================
-       JANELA PRINCIPAL
-       ========================================= -->
-
+  <!--Janela Principal do site, que contém o menu superior, a barra de título, o cabeçalho do site, a área principal, o rodapé e a barra de status.-->
+      
   <div class="aero-window">
 
-    <!-- =======================================
-         MENU SUPERIOR
-         ======================================= -->
+    <!--Menu Superior-->
 
     <nav class="aero-menubar">
-
+      <!--Botão para acessar a pagina de DetalheProduto-->
       <div class="menu-item">
-        File
+        <a routerLink="/detalhe-produto" class="btn aero">Produtos</a>
 
         <div class="dropdown">
-          <a href="#">New</a>
-          <a href="#">Open</a>
-          <a href="#">Save</a>
+          <a routerLink="/resultado-busca">Bebidas</a>
+          <a routerLink="/resultado-busca">Salgados</a>
+          <a routerLink="/resultado-busca">Sobremesas</a>
+          <a routerLink="/resultado-busca">Lanches</a>
+          <a routerLink="/resultado-busca">Outros</a>
         </div>
       </div>
-
+     <!--Botão para acessar a pagina de Cadastro-->
       <div class="menu-item">
-        Subgenres
-
-        <div class="dropdown">
-          <a href="#">Frutiger Aero</a>
-          <a href="#">Frutiger Eco</a>
-          <a href="#">Frutiger Aurora</a>
-          <a href="#">Frutiger Metro</a>
-        </div>
+        <a routerLink="/cadastro" class="btn aero">Cadastro</a>
+      </div>
+      <!--Botão para acessar a pagina de Cesta-->
+      <div class="menu-item">
+        <a routerLink="/cesta" class="btn aero">Cesta</a>
+      </div>
+      <!--Botão para acessar a pagina de login-->
+      <div class="menu-item">
+        <a routerLink="/login" class="btn aero">Login</a>
       </div>
 
-      <div class="menu-item">
-        Sobre
+      
 
-        <div class="dropdown">
-          <a href="#">Sobre</a>
-          <a href="#">Contato</a>
-        </div>
-      </div>
-
-      <div class="menu-item">
-        Resources
-
-        <div class="dropdown">
-          <a href="#">Wallpapers</a>
-          <a href="#">Icons</a>
-          <a href="#">Music</a>
-        </div>
-      </div>
-
-      <div class="menu-item">
-        View
-      </div>
-
-      <div class="menu-item">
-        Help
-      </div>
+      
 
     </nav>
 
@@ -72,7 +47,7 @@
       <div class="aero-title">
 
         <span>
-          Aero Store
+          Frutinger Store
         </span>
 
       </div>
@@ -112,19 +87,22 @@
 
       <div class="site-header-logo">
 
-        <!-- Troque pelo seu logo -->
+        <!-- Logo vira um botão que pode levar à página de Login -->
         <div class="logo-placeholder">
-          <img src="nav_logo.ico" style="width: 60px; height: 60px;">
+          <a routerLink="/">
+            <img src="nav_logo.ico" style="width: 60px; height: 60px;">
+          </a>
+          
         </div>
 
         <div class="logo-text">
 
           <h1>
-            Aero Store
+            Frutinger Store
           </h1>
 
           <span>
-            Bem-vindo ao Frutiger Aero!
+            Bem-vindo à Frutinger Store!
           </span>
 
         </div>
@@ -146,9 +124,10 @@
           - botão de login
           - etc.
         -->
-        
-        <div class="logo-placeholder">
-          <img src="imgs/avatar_buddy.png" style="width:px;height:60px">
+        <!--Exemplo de avatar e caminho também para pagina de Login-->
+        <div class="d-flex flex-column align-items-center">
+        <a routerLink="/login"><img src="imgs/avatar_buddy.png" alt="Ícone de avatar" style="width: 50px; height: 50px; border-radius: 50%;"></a>
+          <span>Login</span>
         </div>
 
 
@@ -157,59 +136,12 @@
     </header>
 
 
-    <!-- =======================================
-         ÁREA PRINCIPAL
-         ======================================= -->
+    <!--Área Principal-->
 
     <main class="site-body">
-
-      <h2>
-        Bem-vindo!
-      </h2>
-      
-      <p>
-        Esse é o conteúdo principal do meu site.
-      </p>
-
-      <p>
-        Toda essa área agora pertence a uma única
-        janela extensa.
-      </p>
-
-
-      <section class="content-section">
-
-        <h3>
-          Minha seção
-        </h3>
-
-        <p>
-          Você pode adicionar aqui qualquer componente
-          Angular, Bootstrap, cards, imagens, textos,
-          formulários etc.
-        </p>
-        <router-outlet></router-outlet>
-
-        <button class="aero-button">
-          Entrar
-        </button>
-
-      </section>
-
-
-      <section class="content-section">
-
-        <h3>
-          Outra seção
-        </h3>
-
-        <p>
-          O body pode crescer verticalmente sem
-          precisar criar novas janelas.
-        </p>
-
-      </section>
-
+       <div class="container">
+          <router-outlet></router-outlet>
+        </div>
     </main>
 
 
@@ -224,7 +156,7 @@
       </span>
 
       <span>
-        Frutiger Aero
+        Frutinger Store
       </span>
 
     </footer>
