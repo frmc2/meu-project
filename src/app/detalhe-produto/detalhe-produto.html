@@ -1,1 +1,61 @@
-<p>detalhe-produto works!</p>
+<h2>Detalhes do Produto</h2>
+
+<p>
+    Confira as informações do produto selecionado.
+</p>
+
+<section class="content-section">
+
+    <div class="produto-detalhe">
+        <button type="button" class="aero-button" routerLink="/">
+            ← VOLTAR
+        </button>
+
+
+        <!-- Imagem -->
+        <div class="produto-imagem" style="margin-top: 20px;">
+            <img src="{{ produto.imagem }}" alt="Chocolate KitKat" height="500">
+        </div>
+
+
+        <!-- Informações -->
+        <div class="produto-detalhe-info">
+
+
+            <!-- Informações adicionais -->
+            <div class="produto-detalhe-informacoes">
+
+                <p>
+                    <strong>Categoria:</strong>
+                    {{ produto.categoria }}
+                </p>
+
+                <p>
+                    <strong>Nome:</strong>
+                    {{ produto.nome }}
+                </p>
+
+                <p>
+                    <strong>Descrição:</strong>
+                    {{ produto.descricao }}
+                </p>
+
+                <p>
+                    <strong>Preço:</strong>
+                    R$ {{ produto.preco.toFixed(2) }}
+                </p>
+
+            </div>
+
+            <!-- Ações -->
+            <nav class="produto-detalhe-acoes">
+                <button class="aero-button" type="button">
+                    ADICIONAR AO CARRINHO
+                </button>
+            </nav>
+
+        </div>
+
+    </div>
+
+</section>

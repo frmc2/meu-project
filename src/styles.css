@@ -88,8 +88,8 @@ body {
         radial-gradient(
             circle at 30% 25%,
             rgba(255,255,255,.9),
-            rgba(255,255,255,.25) 40%,
-            transparent 70%
+            rgba(255,255,255,.25) 65%,
+            transparent 80%
         );
 
     filter: blur(1px);
@@ -116,8 +116,8 @@ body {
 
         radial-gradient(
             circle,
-            rgba(255,255,255,.45),
-            transparent 65%
+            rgba(255,255,255,.6) 40%,
+            transparent 95%
         );
 }
 
@@ -515,9 +515,21 @@ body {
         rgba(0,100,150,.35);
 }
 
+.logo-placeholder img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+
+    /* Força o navegador a recalcular o espaço e jogar a imagem pro centro */
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
 
 .logo-text h1 {
 
+    align-items: center;
+    
     margin: 0;
 
     color: #0875a8;
@@ -557,6 +569,7 @@ body {
    ===================================================== */
 
 .site-body {
+    opacity: 95;
 
     /*
        A área branca principal.
@@ -568,12 +581,15 @@ body {
     padding:
         35px 40px;
 
+    /*↓↓ MEXER NO FUNDO ↓↓*/
     background:
 
         linear-gradient(
             135deg,
-            rgba(255,255,255,.92),
-            rgba(240,252,255,.75)
+            rgba(255,255,255, 0.45),
+            rgba(255,255,255, .3),
+            rgba(255,255,255, 0.6),
+            rgba(255,255,255, .2)
         );
 
     color: #234;
@@ -619,8 +635,9 @@ body {
 
         linear-gradient(
             135deg,
-            rgba(255,255,255,.8),
-            rgba(210,245,255,.55)
+            rgba(255,255,255, .4),
+            rgba(210,245,255,.55),
+            rgba(255,255,255, .6)
         );
 
     border:
@@ -812,4 +829,126 @@ body {
 
         font-size: 23px;
     }
+}
+.form-group input {
+
+    margin-bottom: 20px;
+    /* Layout */
+    flex: 1;
+    min-width: 220px;
+    height: 36px;
+
+    box-sizing: border-box;
+
+    padding: 0 14px;
+
+    /* Tipografia */
+    color: #24566a;
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    text-shadow:
+        0 1px white;
+
+    /* Formato */
+    border-radius: 7px;
+
+    /* Fundo de vidro */
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.9),
+            rgba(235,252,255,.75)
+        );
+
+    /* Borda */
+    border:
+        1px solid
+        rgba(90,170,195,.65);
+
+    box-shadow:
+
+        inset 0 1px 2px
+        rgba(255,255,255,.95),
+
+        inset 0 -1px 2px
+        rgba(80,170,200,.15),
+
+        0 2px 5px
+        rgba(0,80,120,.18);
+
+    outline: none;
+
+    transition:
+        .15s ease;
+}
+
+
+/* =====================================================
+   PLACEHOLDER
+   ===================================================== */
+
+.form-group input::placeholder {
+
+    color:
+        rgba(55,110,125,.65);
+
+    text-shadow:
+        0 1px white;
+}
+
+
+/* =====================================================
+   FOCO
+   ===================================================== */
+
+.form-group input:focus {
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.98),
+            rgba(215,247,255,.85)
+        );
+
+    border-color:
+        #4bb8d8;
+
+    box-shadow:
+
+        inset 0 1px 3px
+        rgba(255,255,255,1),
+
+        0 0 0 2px
+        rgba(80,210,240,.25),
+
+        0 3px 7px
+        rgba(0,90,130,.2);
+}
+
+
+/* =====================================================
+   HOVER
+   ===================================================== */
+
+.form-group input:hover {
+
+    border-color:
+        rgba(70,170,200,.85);
+
+    box-shadow:
+
+        inset 0 1px 3px
+        rgba(255,255,255,1),
+
+        0 2px 6px
+        rgba(0,90,130,.22);
 }

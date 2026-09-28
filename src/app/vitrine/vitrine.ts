@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BarraBusca } from '../barra-busca/barra-busca';
+import { Produto, produtos } from '../model/produto';
 
 @Component({
   selector: 'app-vitrine',
@@ -9,4 +10,6 @@ import { BarraBusca } from '../barra-busca/barra-busca';
   templateUrl: './vitrine.html',
   styleUrl: './vitrine.css',
 })
-export class Vitrine {}
+export class Vitrine {
+    produtos: Produto[] = produtos;
+}

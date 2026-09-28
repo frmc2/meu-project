@@ -15,8 +15,8 @@ export const routes: Routes = [
     {path:"login", component: Login },
     {path:"resultado-busca", component: ResultadoBusca },
     {path:"cadastro", component: Cadastro },
-    {path:"barra-busca", component: BarraBusca },
+    {path:"", component: BarraBusca },
     {path:"reenvio", component: Reenvio },
-    {path:"detalhe-produto", component: DetalheProduto },
+    {path:"detalhe-produto/:id", component: DetalheProduto },
     {path:"esqueci-senha", component: EsqueciSenha }
 ];

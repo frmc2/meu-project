@@ -1,0 +1,5 @@
+:host .site-header-logo {
+    align-items: center ;
+    justify-content: center;
+    display: flex;
+}

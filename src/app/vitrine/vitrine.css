@@ -1,4 +1,4 @@
-.produtos-grid {
+  .produtos-grid {
   /* Mantido exatamente como você definiu */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));

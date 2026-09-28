@@ -1,6 +1,6 @@
 <div class="aero-desktop">
   <!--Janela Principal do site, que contém o menu superior, a barra de título, o cabeçalho do site, a área principal, o rodapé e a barra de status.-->
-      
+
   <div class="aero-window">
 
     <!--Menu Superior-->
@@ -18,7 +18,7 @@
           <a routerLink="/resultado-busca">Outros</a>
         </div>
       </div>
-     <!--Botão para acessar a pagina de Cadastro-->
+      <!--Botão para acessar a pagina de Cadastro-->
       <div class="menu-item">
         <a routerLink="/cadastro" class="btn aero">Cadastro</a>
       </div>
@@ -31,9 +31,9 @@
         <a routerLink="/login" class="btn aero">Login</a>
       </div>
 
-      
 
-      
+
+
 
     </nav>
 
@@ -47,7 +47,7 @@
       <div class="aero-title">
 
         <span>
-          Frutinger Store
+          Aero Store
         </span>
 
       </div>
@@ -55,22 +55,15 @@
 
       <div class="aero-controls">
 
-        <button
-          type="button"
-          aria-label="Minimize">
+        <button type="button" aria-label="Minimize">
           −
         </button>
 
-        <button
-          type="button"
-          aria-label="Maximize">
+        <button type="button" aria-label="Maximize">
           □
         </button>
 
-        <button
-          type="button"
-          class="close"
-          aria-label="Close">
+        <button type="button" class="close" aria-label="Close">
           ×
         </button>
 
@@ -89,20 +82,22 @@
 
         <!-- Logo vira um botão que pode levar à página de Login -->
         <div class="logo-placeholder">
+
           <a routerLink="/">
-            <img src="nav_logo.ico" style="width: 60px; height: 60px;">
+            <img src="nav_logo.ico">
           </a>
-          
+
         </div>
 
         <div class="logo-text">
 
+
           <h1>
-            Frutinger Store
+            Aero Store
           </h1>
 
           <span>
-            Bem-vindo à Frutinger Store!
+            Bem-vindo à Aero Store!
           </span>
 
         </div>
@@ -113,7 +108,7 @@
       <div class="site-header-extra">
 
 
-        
+
         <!--
           Aqui futuramente você pode colocar:
 
@@ -126,7 +121,12 @@
         -->
         <!--Exemplo de avatar e caminho também para pagina de Login-->
         <div class="d-flex flex-column align-items-center">
-        <a routerLink="/login"><img src="imgs/avatar_buddy.png" alt="Ícone de avatar" style="width: 50px; height: 50px; border-radius: 50%;"></a>
+          <a routerLink="/login">
+            <div class="logo-placeholder">
+              <img src="imgs/avatar_buddy.png" alt="Ícone de avatar"
+                style="width: 70px; height: 70px; border-radius: 50%;">
+            </div>
+          </a>
           <span>Login</span>
         </div>
 
@@ -139,9 +139,9 @@
     <!--Área Principal-->
 
     <main class="site-body">
-       <div class="container">
-          <router-outlet></router-outlet>
-        </div>
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
     </main>
 
 
@@ -156,7 +156,7 @@
       </span>
 
       <span>
-        Frutinger Store
+        Aero Store
       </span>
 
     </footer>
