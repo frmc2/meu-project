@@ -807,13 +807,13 @@ body {
 
     .aero-window {
 
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
+        width:(100% - 24px);
+        margin-left: auto;
+        margin-right: auto;
 
-        margin: 0;
+        margin: 0 auto;
 
-        border-radius: 0;
+        border-radius: 8px;
     }
 
 

@@ -24,19 +24,13 @@
         <img [src]="produto.imagem" [alt]="produto.nome" height="110">
       </div>
 
-      <h4>{{ produto.categoria }}</h4>
-
-      <p>{{ produto.nome }}</p>
+      <h4>{{ produto.nome }}</h4>
 
       <strong>
         R$ {{ produto.preco.toFixed(2) }}
       </strong>
 
-      <nav>
-        <a [routerLink]="['/detalhe-produto', produto.id]">
-          <button class="aero-button">DETALHES</button>
-        </a>
-      </nav>
+      <button [routerLink]="['/detalhe-produto', produto.id]" class="aero-button">DETALHES</button>
     </article>
     }
   </div>
