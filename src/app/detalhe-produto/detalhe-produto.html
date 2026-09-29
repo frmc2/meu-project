@@ -49,10 +49,14 @@
 
             <!-- Ações -->
             <nav class="produto-detalhe-acoes">
-                <button class="aero-button" type="button">
-                    ADICIONAR AO CARRINHO
+                <button class="aero-button" type="button" (click)="adicionarNaCesta()">
+                    ADICIONAR À CESTA
                 </button>
             </nav>
+
+            @if (mensagemCesta) {
+                <p class="mensagem-cesta" role="status">✓ {{ mensagemCesta }}</p>
+            }
 
         </div>
 
