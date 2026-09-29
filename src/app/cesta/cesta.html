@@ -1,1 +1,79 @@
-<p>cesta works!</p>
+<section class="content-section cesta-section">
+  <header class="cesta-cabecalho">
+    <div>
+      <h2>Minha cesta</h2>
+      <p>Confira os produtos que você selecionou.</p>
+    </div>
+  </header>
+
+  @if (cesta.itens.length > 0) {
+    <div class="cesta-lista">
+      <div class="cesta-lista-cabecalho" aria-hidden="true">
+        <span>Produto</span>
+        <span>Quantidade</span>
+        <span></span>
+        <span>Subtotal</span>
+      </div>
+
+      @for (item of cesta.itens; track item.produto.id) {
+        <article class="cesta-item">
+          <div class="produto-na-cesta">
+            <img [src]="item.produto.imagem" [alt]="item.produto.nome" />
+            <div>
+              <h3>{{ item.produto.nome }}</h3>
+              <p>{{ formatarPreco(item.produto.preco) }} por unidade</p>
+            </div>
+          </div>
+
+          <span class="cesta-quantidade">{{ item.quantidade }}x</span>
+          <div class="cesta-remover aero-controls">
+            <button
+              type="button"
+              class="close"
+              [attr.aria-label]="'Remover uma unidade de ' + item.produto.nome"
+              title="Remover uma unidade"
+              (click)="removerUnidade(item.produto.id)"
+            >
+              ×
+            </button>
+          </div>
+
+          <strong class="cesta-subtotal">
+            {{ formatarPreco(calcularValor(item.produto.preco, item.quantidade)) }}
+          </strong>
+        </article>
+      }
+    </div>
+
+    <div class="cesta-total">
+      <span>Total</span>
+      <strong>{{ formatarPreco(calcularTotal()) }}</strong>
+    </div>
+
+    <div class="cesta-acoes">
+      <button class="aero-button cesta-limpar" type="button" (click)="limparCesta()">
+        Esvaziar cesta
+      </button>
+      <button class="aero-button" type="button" (click)="finalizar()">
+        Finalizar compra
+      </button>
+    </div>
+  } @else {
+    <div class="cesta-vazia">
+      <h3>Sua cesta está vazia</h3>
+      <p>Escolha um produto na vitrine.</p>
+      <a class="aero-button" routerLink="/">Ver produtos</a>
+    </div>
+  }
+</section>
+
+@if (mostrarPopup) {
+  <div class="cesta-popup-fundo">
+    <section class="cesta-popup" role="dialog" aria-modal="true" aria-labelledby="cesta-popup-titulo">
+      <div class="cesta-popup-icone" aria-hidden="true">✓</div>
+      <h2 id="cesta-popup-titulo">Compra finalizada!</h2>
+      <p>Seu pedido foi realizado com sucesso.</p>
+      <button class="aero-button" type="button" (click)="fecharPopup()">Continuar</button>
+    </section>
+  </div>
+}
