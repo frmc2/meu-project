@@ -119,15 +119,21 @@
           - botão de login
           - etc.
         -->
+
         <!--Exemplo de avatar e caminho também para pagina de Login-->
         <div class="d-flex flex-column align-items-center">
-          <a routerLink="/login">
-            <div class="logo-placeholder">
-              <img src="imgs/avatar_buddy.png" alt="Ícone de avatar"
-                style="width: 70px; height: 70px; border-radius: 50%;">
-            </div>
-          </a>
-          <span>Login</span>
+          @if ( auth.verificarLogin() ) {
+          <div class="logo-placeholder2" routerLink="/login">
+            <img src="imgs/peixe-quadrado.png" alt="Ícone de avatar" style="width: 100px; height: 100px;">
+          </div>
+          <p>{{ auth.getClient() }}</p>
+          } @else {
+          <div class="logo-placeholder" routerLink="/login">
+            <img src="imgs/avatar_buddy.png" alt="Ícone de avatar"
+              style="width: 70px; height: 70px; border-radius: 50%;">
+          </div>
+          <p>login</p>
+          }
         </div>
 
 

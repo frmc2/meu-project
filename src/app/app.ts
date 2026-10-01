@@ -1,5 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, inject, PLATFORM_ID, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { AuthService } from './services/auth';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +11,14 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('meu-project');
+
+  private platformId = inject(PLATFORM_ID);
+
+  auth = inject(AuthService);
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.auth.verificarLogin();
+    }
+  }
 }
