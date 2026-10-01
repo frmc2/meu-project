@@ -170,4 +170,207 @@ export const produtos: Produto[] = [
     imagem: 'imgs/croassant.png'
   },
 
+  {
+    id: 19,
+    categoria: 'Bebidas',
+    nome: 'Fanta Laranja Lata',
+    descricao: 'Refrigerante Fanta Laranja 350ml.',
+    preco: 5.00,
+    imagem: 'imgs/fanta_laranja_lata.png'
+  },
+
+  {
+    id: 20,
+    categoria: 'Bebidas',
+    nome: 'Fanta Uva Lata',
+    descricao: 'Refrigerante Fanta Uva 350ml.',
+    preco: 5.00,
+    imagem: 'imgs/fanta_uva_lata.png'
+  },
+
+  {
+    id: 21,
+    categoria: 'Bebidas',
+    nome: 'Fanta Guaraná Lata',
+    descricao: 'Refrigerante Fanta Guaraná 350ml.',
+    preco: 5.00,
+    imagem: 'imgs/fanta_guarana_lata.png'
+  },
+
+  {
+    id: 22,
+    categoria: 'Bebidas',
+    nome: 'Fanta Maracujá Lata',
+    descricao: 'Refrigerante Fanta Maracujá 350ml.',
+    preco: 5.00,
+    imagem: 'imgs/fanta_maracuja_lata.png'
+  },
+
+  {
+    id: 23,
+    categoria: 'Bebidas',
+    nome: 'Fanta Caju lata',
+    descricao: 'Refrigerante Fanta Caju 350ml.',
+    preco: 5.00,
+    imagem: 'imgs/fanta_caju_lata.png'
+  },
+
+  {
+    id: 24,
+    categoria: 'Bebidas',
+    nome: 'Fanta Laranja Zero lata',
+    descricao: 'Refrigerante Fanta Laranja Zero 350ml.',
+    preco: 5.00,
+    imagem: 'imgs/fanta_laranja_zero_lata.png'
+  },
+
+  {
+    id: 25,
+    categoria: 'Bebidas',
+    nome: 'Fanta Blue Mistério lata',
+    descricao: 'Refrigerante Fanta Blue Mistério 350ml.',
+    preco: 5.00,
+    imagem: 'imgs/fanta_blue_misterio_lata.png'
+  },
+
+
+  {
+    id: 26,
+    categoria: 'Bebidas',
+    nome: 'Fanta Uva Garrafa 2L',
+    descricao: 'Refrigerante Fanta Uva 2L.',
+    preco: 5.00,
+    imagem: 'imgs/fanta_uva_2l.png'
+  },
+
+  {
+    id: 27,
+    categoria: 'Bebidas',
+    nome: 'Fanta Laranja Garrafa 2L',
+    descricao: 'Refrigerante Fanta Laranja 2L.',
+    preco: 5.00,
+    imagem: 'imgs/fanta_laranja_2l.png'
+  },
+
+  {
+    id: 28,
+    categoria: 'Bebidas',
+    nome: 'Fanta Guaraná Garrafa 2L',
+    descricao: 'Refrigerante Fanta Guaraná 2L.',
+    preco: 5.00,
+    imagem: 'imgs/fanta_guarana_2l.png'
+  },
+
+  {
+    id: 29,
+    categoria: 'Outros',
+    nome: 'Mouse Aqua-Liquid Blue Skeuoss',
+    descricao: 'Mouse Skeuoss estilo Frutiger Aero - Aqua Liquid/Blue.',
+    preco: 30.00,
+    imagem: 'imgs/skeuoss_frutigeraero-aqualiquidmouse-blue.png'
+  },
+
+  {
+    id: 30,
+    categoria: 'Outros',
+    nome: 'Mouse Aqua-Liquid Clear Blue Skeuoss',
+    descricao: 'Mouse Skeuoss estilo Frutiger Aero - Aqua Liquid/Clear Blue.',
+    preco: 30.00,
+    imagem: 'imgs/skeuoss_frutigeraero-aqualiquidmouse-clearblue.png'
+  },
+
+  {
+    id: 31,
+    categoria: 'Outros',
+    nome: 'Poster Aqua Frutiger Aero',
+    descricao: 'Poster estilo Frutiger Aero - Aqua Blue.',
+    preco: 30.00,
+    imagem: 'imgs/posteraqua_fruntigeraero.png'
+  },
+
+ {
+    id: 32,
+    categoria: 'Outros',
+    nome: 'Poster Globe Frutiger Aero',
+    descricao: 'Poster estilo Frutiger Aero - Globe.',
+    preco: 30.00,
+    imagem: 'imgs/posterglobe_fruntigeraero.png'
+  },
+
+  {
+    id: 33,
+    categoria: 'Outros',
+    nome: 'Poster Promissed Future Frutiger Aero',
+    descricao: 'Poster estilo Frutiger Aero - Promissed Future.',
+    preco: 30.00,
+    imagem: 'imgs/posterpromissedfuture_fruntigeraero.png'
+  },
+
+  {
+    id: 34,
+    categoria: 'Outros',
+    nome: 'Mouse Pad Frutiger Aero - Aqua',
+    descricao: 'Mouse Pad estilo Frutiger Aero Aqua.',
+    preco: 30.00,
+    imagem: 'imgs/mousepad_fruntigeraero-aqua.png'
+  },
+
+  {
+    id: 35,
+    categoria: 'Outros',
+    nome: 'Mouse Pad Frutiger Aero - Promissed Future',
+    descricao: 'Mouse Pad estilo Frutiger Aero Promissed Future.',
+    preco: 30.00,
+    imagem: 'imgs/mousepad_fruntigeraero-promissedfuture.png'
+  },
+
+  {
+    id: 36,
+    categoria: 'Outros',
+    nome: 'Camisa T-SHIRT Unissex Frutiger Aero',
+    descricao: 'Camisa T-SHIRT Unissex estilo Frutiger Aero.',
+    preco: 30.00,
+    imagem: 'imgs/camisa_t-shirt_unissex_fruntigeraearo.png'
+  },
+
+  {
+    id: 37,
+    categoria: 'Outros',
+    nome: 'Camisa T-SHIRT Unissex Sports Frutiger Aero',
+    descricao: 'Camisa T-SHIRT Unissex estilo Frutiger Aero Sports.',
+    preco: 30.00,
+    imagem: 'imgs/camisa_t-shirt_unissex_sports_fruntigeraero.png'
+  },
+
+  {
+    id: 38,
+    categoria: 'Outros',
+    nome: 'Bonecos Frutiger Aero - MSN (10 peças)',
+    descricao: 'Bonecos estilo Frutiger Aero - MSN (10 peças).',
+    preco: 30.00,
+    imagem: 'imgs/bonecos_fruntigeraero-MSN_10pcs.png'
+  },
+
+
+  {
+    id: 39,
+    categoria: 'Outros',
+    nome: 'Bonecos Frutiger Aero - MSN (10 peças)',
+    descricao: 'Bonecos estilo Frutiger Aero - MSN (10 peças).',
+    preco: 30.00,
+    imagem: 'imgs/bonecos_fruntigeraero-MSN_10pcs.png'
+  },
+
+  {
+    id: 40,
+    categoria: 'Outros',
+    nome: 'Bixo de Pelucia Fruntiger Aero - Axoloti',
+    descricao: 'Bixo de Pelucia estilo Frutiger Aero - Axoloti.',
+    preco: 30.00,
+    imagem: 'imgs/bixodepelucia_fruntigeraero_axoloti.png'
+  },
+
+
+
+
 ];

@@ -42,12 +42,10 @@
             <p role="alert">{{ erro }}</p>
             }
         </form>
-        <!--
-        <div class="content-section">
-            <h2>Você já está logado!</h2>
-            <p>Redirecionando para a página inicial...</p>
-        </div>
-        -->
+        
+        @if (statusRedirecionamento) {
+        <p role="status">{{ statusRedirecionamento }}</p>
+        }
 
         <div class="form-footer">
             <span>Não possui uma conta?</span>
@@ -57,5 +55,4 @@
             </a>
         </div>
 
-    </div>
 </div>

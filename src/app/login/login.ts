@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../services/auth';
 
 @Component({
@@ -10,11 +11,28 @@ import { AuthService } from '../services/auth';
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
-export class Login {
+export class Login implements OnInit, OnDestroy {
   email = '';
   senha = '';
   erro = '';
-  auth = inject(AuthService);
+  statusRedirecionamento = '';
+
+  private readonly auth = inject(AuthService);
+  private readonly router = inject(Router);
+  private readonly platformId = inject(PLATFORM_ID);
+  private redirecionamentoTimer?: ReturnType<typeof setTimeout>;
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId) && this.auth.verificarLogin()) {
+      void this.router.navigateByUrl('/perfil');
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.redirecionamentoTimer) {
+      clearTimeout(this.redirecionamentoTimer);
+    }
+  }
 
   login() {
     const usuarioSalvo = localStorage.getItem('usuario');
@@ -45,10 +63,20 @@ export class Login {
       this.email = '';
       this.senha = '';
       this.erro = '';
-
-      // aqui você pode navegar para outra página
+      this.agendarRedirecionamento('Login realizado. Redirecionando para seu perfil...');
     } else {
       this.erro = 'E-mail ou senha incorretos.';
     }
+  }
+
+  private agendarRedirecionamento(mensagem: string): void {
+    if (this.redirecionamentoTimer) {
+      clearTimeout(this.redirecionamentoTimer);
+    }
+
+    this.statusRedirecionamento = mensagem;
+    this.redirecionamentoTimer = setTimeout(() => {
+      void this.router.navigateByUrl('/perfil');
+    }, 2500);
   }
 }
