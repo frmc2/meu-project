@@ -94,7 +94,7 @@ export const produtos: Produto[] = [
     categoria: 'Salgados',
     nome: 'Cheetos - Cheddar',
     descricao: 'Cheetos sabor cheddar 131g.',
-    preco: 7.00,
+    preco: 7.50,
     imagem: 'imgs/cheetos_cheddar.png'
   },
 
@@ -103,7 +103,7 @@ export const produtos: Produto[] = [
     categoria: 'Salgados',
     nome: 'Cheetos - Requeijão',
     descricao: 'Cheetos sabor requeijão 131g.',
-    preco: 7.00,
+    preco: 7.50,
     imagem: 'imgs/cheetos_requeijao.png'
   },
 
@@ -112,7 +112,7 @@ export const produtos: Produto[] = [
     categoria: 'Salgados',
     nome: 'Pringles - Original',
     descricao: 'Pringles sabor original 170g.',
-    preco: 7.00,
+    preco: 12.00,
     imagem: 'imgs/pringles.png'
   },
 
@@ -121,7 +121,7 @@ export const produtos: Produto[] = [
     categoria: 'Salgados',
     nome: 'Ruflles - Original',
     descricao: 'Ruflles sabor original 131g.',
-    preco: 7.00,
+    preco: 7.50,
     imagem: 'imgs/ruflles.png'
   },
 
@@ -130,7 +130,7 @@ export const produtos: Produto[] = [
     categoria: 'Lanches',
     nome: 'Pastel de Forno - Carne',
     descricao: 'Pastel de Forno sabor carne 131g.',
-    preco: 7.00,
+    preco: 5.50,
     imagem: 'imgs/pastel_de_forno.png'
   },
 
@@ -139,7 +139,7 @@ export const produtos: Produto[] = [
     categoria: 'Lanches',
     nome: 'Pastel de Forno - Frango',
     descricao: 'Pastel de Forno sabor frango 131g.',
-    preco: 7.00,
+    preco: 5.50,
     imagem: 'imgs/pastel_de_forno.png'
   },
 
@@ -148,7 +148,7 @@ export const produtos: Produto[] = [
     categoria: 'Lanches',
     nome: 'Esfiha - Carne',
     descricao: 'Esfiha sabor carne 131g.',
-    preco: 7.00,
+    preco: 4.00,
     imagem: 'imgs/esfiha.png'
   },
 
@@ -157,7 +157,16 @@ export const produtos: Produto[] = [
     categoria: 'Lanches',
     nome: 'Croassant - Frango',
     descricao: 'Croassant sabor frango 131g.',
-    preco: 7.00,
+    preco: 4.50,
+    imagem: 'imgs/croassant.png'
+  },
+
+  {
+    id: 18,
+    categoria: 'Lanches',
+    nome: 'Croassant - Carne',
+    descricao: 'Croassant sabor carne 131g.',
+    preco: 4.50,
     imagem: 'imgs/croassant.png'
   },
 
