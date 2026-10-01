@@ -8,16 +8,16 @@
         <h2>Login</h2>
     </div>
 
-    <form>
+    <form (ngSubmit)="login()">
 
         <div class="form-group">
 
-            <input id="email" type="email" name="email" placeholder="seu@email.com" required>
+            <input id="email" type="email" name="email" placeholder="seu@email.com" [(ngModel)]="email" required>
         </div>
 
         <div class="form-group">
 
-            <input id="password" type="password" name="password" placeholder="Sua senha" required>
+            <input id="password" type="password" name="senha" placeholder="Sua senha" [(ngModel)]="senha" required>
         </div>
 
         <div class="form-options">
@@ -36,6 +36,9 @@
             Entrar
         </button>
 
+        @if (erro) {
+        <p role="alert">{{ erro }}</p>
+        }
     </form>
 
     <div class="form-footer">
