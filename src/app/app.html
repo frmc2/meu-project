@@ -52,7 +52,7 @@
 
       </div>
 
-    
+
       <div class="aero-controls">
 
         <button type="button" aria-label="Minimize">
@@ -68,7 +68,6 @@
         </button>
 
       </div>
-  
 
     </header>
 
@@ -118,22 +117,26 @@
           - relógio
           - status
           - botão de login
-          - etc.
+          - etc.""
         -->
 
         <!--Exemplo de avatar e caminho também para pagina de Login-->
         <div class="d-flex flex-column align-items-center">
           @if ( auth.verificarLogin() ) {
-          <div class="logo-placeholder2" routerLink="/login">
-            <img src="imgs/peixe-quadrado.png" alt="Ícone de avatar" style="width: 100px; height: 100px;">
-          </div>
-          <p>{{ auth.getClient() }}</p>
+            <a routerLink="/login">
+              <div class="logo-placeholder2">
+                <img src="imgs/peixe-quadrado.png" alt="Ícone de avatar" style="width: 100px; height: 100px;">
+              </div>
+            </a>
+          <p>Olá, {{ auth.getClient() }}!</p>
           } @else {
-          <div class="logo-placeholder" routerLink="/login">
-            <img src="imgs/avatar_buddy.png" alt="Ícone de avatar"
-              style="width: 70px; height: 70px; border-radius: 50%;">
-          </div>
-          <p>login</p>
+            <a routerLink="/login">
+              <div class="logo-placeholder" routerLink="/login">
+                <img src="imgs/avatar_buddy.png" alt="Ícone de avatar"
+                  style="width: 70px; height: 70px; border-radius: 50%;">
+              </div>
+              <p>login</p>
+            </a>
           }
         </div>
 

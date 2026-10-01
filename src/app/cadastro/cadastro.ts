@@ -11,18 +11,23 @@ import { FormsModule } from '@angular/forms';
 export class Cadastro {
   
   nome = '';
+  sobrenome = '';
   email = '';
   senha = '';
+  cpf = '';
 
   cadastrar() {
+    console.log("Cadastrando usuário: ", this.nome, this.email, this.senha);
     const usuario = {
       nome: this.nome,
+      sobrenome: this.sobrenome,
+      cpf: this.cpf,
       email: this.email,
       senha: this.senha
     };
 
     localStorage.setItem('usuario', JSON.stringify(usuario));
 
-    console.log("Usuário Cadastrado")
+    console.log("Usuário Cadastrado ", usuario);
   }
 }
