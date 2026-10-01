@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../services/auth';
 import { FormsModule } from '@angular/forms';
@@ -6,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, FormsModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -19,24 +20,31 @@ export class Login {
   login() {
     const usuarioSalvo = localStorage.getItem('usuario');
 
-
     if (!usuarioSalvo) {
       this.erro = 'Usuário não encontrado.';
       return;
     }
 
-    const usuario = JSON.parse(usuarioSalvo);
+    let usuario: { nome?: string; email?: string; senha?: string };
+    try {
+      usuario = JSON.parse(usuarioSalvo);
+    } catch {
+      this.erro = 'Os dados cadastrados estão inválidos. Faça o cadastro novamente.';
+      return;
+    }
 
     if (
-      usuario.email === this.email &&
+      usuario.email?.trim().toLowerCase() === this.email.trim().toLowerCase() &&
       usuario.senha === this.senha
     ) {
       console.log('Login realizado!');
 
       // indica que o usuário está logado
       this.auth.login();
-      this.auth.setClient(usuario.nome);
+      this.auth.setClient(usuario.nome ?? 'Usuário');
 
+      this.email = '';
+      this.senha = '';
       this.erro = '';
 
       // aqui você pode navegar para outra página

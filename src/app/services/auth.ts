@@ -1,32 +1,46 @@
-import { Injectable } from '@angular/core';
-import { signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    logado = signal(false);
+    readonly logado = signal(false);
+
+    private readonly platformId = inject(PLATFORM_ID);
+
+    private get isBrowser(): boolean {
+        return isPlatformBrowser(this.platformId);
+    }
 
     setClient(nome: string) {
-        localStorage.setItem('nome', nome);
+        if (this.isBrowser) {
+            localStorage.setItem('nome', nome);
+        }
     }
 
     getClient() {
-        return localStorage.getItem('nome') ?? '';
+        return this.isBrowser ? localStorage.getItem('nome') ?? '' : '';
     }
 
     login() {
         this.logado.set(true);
-        localStorage.setItem('logado', 'true');
-        localStorage.setItem('nome', 'Usuário');
+
+        if (this.isBrowser) {
+            localStorage.setItem('logado', 'true');
+            localStorage.setItem('nome', 'Usuário');
+        }
     }
 
     logout() {
         this.logado.set(false);
-        localStorage.removeItem('logado');
+
+        if (this.isBrowser) {
+            localStorage.removeItem('logado');
+        }
     }
 
     verificarLogin() {
-        return localStorage.getItem('logado') === 'true';
+        return this.isBrowser && localStorage.getItem('logado') === 'true';
     }
 }
