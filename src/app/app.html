@@ -51,7 +51,7 @@
       <div class="aero-title">
 
         <span>
-          Aero Store
+          Frutiger Store
         </span>
 
       </div>
@@ -86,29 +86,26 @@
 
         <!-- Logo vira um botão que pode levar à página de Login -->
         <div class="logo-placeholder">
-
           <a routerLink="/">
             <img src="nav_logo.ico">
           </a>
-
+          
+          
         </div>
 
-        <div class="logo-text">
-
-
+        <div class="logo-text" style="margin-left: 10px;">
           <h1>
-            Aero Store
+            Frutiger Store
           </h1>
 
           <span>
-            Bem-vindo à Aero Store!
+            Bem-vindo à Frutiger Store!
           </span>
-
         </div>
         
       </div>
 
-      <div class="site-header-search">
+      <div class="site-header-search" style="flex:1">
         <app-barra-busca></app-barra-busca>
       </div>
       <div class="site-header-extra">
@@ -134,7 +131,7 @@
                 <img src="imgs/peixe-quadrado.png" alt="Ícone de avatar" style="width: 100px; height: 100px;">
               </div>
             </a>
-          <p>Olá, {{ auth.getClient() }}!</p>
+          <p>Olá, {{ auth.getClient().nome }}!</p>
           } @else {
             <a routerLink="/perfil">
               <div class="logo-placeholder">
@@ -164,17 +161,7 @@
          FOOTER
          ======================================= -->
 
-    <footer class="site-footer">
 
-      <span>
-        © 2026 Meu Site
-      </span>
-
-      <span>
-        Aero Store
-      </span>
-
-    </footer>
 
 
     <!-- =======================================

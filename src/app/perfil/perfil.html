@@ -9,6 +9,7 @@
             <h2>Meu Perfil</h2>
 
             <p class="form-group"><strong>Nome:&nbsp;</strong> {{ auth.getClient()?.nome }}</p>
+            <p class="form-group"><strong>Sobrenome:&nbsp;</strong> {{ auth.getClient()?.sobrenome }}</p>
             <p class="form-group"><strong>E-mail:&nbsp;</strong> {{ auth.getClient()?.email }}</p>
             <p class="form-group"><strong>CPF:&nbsp;</strong> {{ auth.getClient()?.cpf }}</p>
         </div>
@@ -16,7 +17,7 @@
         <button class="aero-button" (click)="auth.logout()"><h2>Logout</h2></button>
         } @else {
             <div class="logo-placeholder">
-                <img src="imgs/avatar_buddy.png" height="200">
+                <img src="imgs/avatar_buddy.png" height="flex">
             </div>
         <button class="aero-button" routerLink="/login"><h2>Login</h2></button>
         }  

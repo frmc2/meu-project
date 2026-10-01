@@ -27,7 +27,8 @@ export class Cadastro {
     }
 
     const usuario = {
-      nome: `${this.nome.trim()} ${this.sobrenome.trim()}`.trim(),
+      nome: this.nome.trim(),
+      sobrenome: this.sobrenome.trim(),
       cpf: this.cpf.trim(),
       email: this.email.trim().toLowerCase(),
       senha: this.senha
