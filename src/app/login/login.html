@@ -41,11 +41,8 @@
             <p role="alert">{{ erro }}</p>
             }
         </form>
-        @if(auth.verificarLogin()){
-        <div class="content-section">
-            <h2>Você já está logado!</h2>
-            <p>Redirecionando para a página inicial...</p>
-        </div>
+        @if (statusRedirecionamento) {
+        <p role="status">{{ statusRedirecionamento }}</p>
         }
 
     <div class="form-footer">
