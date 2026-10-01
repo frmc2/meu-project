@@ -17,7 +17,7 @@ export class Login implements OnInit, OnDestroy {
   erro = '';
   statusRedirecionamento = '';
 
-  private readonly auth = inject(AuthService);
+  public readonly auth = inject(AuthService);
   private readonly router = inject(Router);
   private readonly platformId = inject(PLATFORM_ID);
   private redirecionamentoTimer?: ReturnType<typeof setTimeout>;

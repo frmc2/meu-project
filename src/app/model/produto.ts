@@ -266,7 +266,7 @@ export const produtos: Produto[] = [
     categoria: 'Outros',
     nome: 'Mouse Aqua-Liquid Blue Skeuoss',
     descricao: 'Mouse Skeuoss estilo Frutiger Aero - Aqua Liquid/Blue.',
-    preco: 30.00,
+    preco: 25.00,
     imagem: 'imgs/skeuoss_frutigeraero-aqualiquidmouse-blue.png'
   },
 
@@ -275,7 +275,7 @@ export const produtos: Produto[] = [
     categoria: 'Outros',
     nome: 'Mouse Aqua-Liquid Clear Blue Skeuoss',
     descricao: 'Mouse Skeuoss estilo Frutiger Aero - Aqua Liquid/Clear Blue.',
-    preco: 30.00,
+    preco: 25.00,
     imagem: 'imgs/skeuoss_frutigeraero-aqualiquidmouse-clearblue.png'
   },
 
@@ -311,7 +311,7 @@ export const produtos: Produto[] = [
     categoria: 'Outros',
     nome: 'Mouse Pad Frutiger Aero - Aqua',
     descricao: 'Mouse Pad estilo Frutiger Aero Aqua.',
-    preco: 30.00,
+    preco: 38.99,
     imagem: 'imgs/mousepad_fruntigeraero-aqua.png'
   },
 
@@ -320,7 +320,7 @@ export const produtos: Produto[] = [
     categoria: 'Outros',
     nome: 'Mouse Pad Frutiger Aero - Promissed Future',
     descricao: 'Mouse Pad estilo Frutiger Aero Promissed Future.',
-    preco: 30.00,
+    preco: 38.99,
     imagem: 'imgs/mousepad_fruntigeraero-promissedfuture.png'
   },
 
@@ -329,7 +329,7 @@ export const produtos: Produto[] = [
     categoria: 'Outros',
     nome: 'Camisa T-SHIRT Unissex Frutiger Aero',
     descricao: 'Camisa T-SHIRT Unissex estilo Frutiger Aero.',
-    preco: 30.00,
+    preco: 50.00,
     imagem: 'imgs/camisa_t-shirt_unissex_fruntigeraearo.png'
   },
 
@@ -338,7 +338,7 @@ export const produtos: Produto[] = [
     categoria: 'Outros',
     nome: 'Camisa T-SHIRT Unissex Sports Frutiger Aero',
     descricao: 'Camisa T-SHIRT Unissex estilo Frutiger Aero Sports.',
-    preco: 30.00,
+    preco: 50.00,
     imagem: 'imgs/camisa_t-shirt_unissex_sports_fruntigeraero.png'
   },
 
@@ -347,26 +347,16 @@ export const produtos: Produto[] = [
     categoria: 'Outros',
     nome: 'Bonecos Frutiger Aero - MSN (10 peças)',
     descricao: 'Bonecos estilo Frutiger Aero - MSN (10 peças).',
-    preco: 30.00,
+    preco: 19.99,
     imagem: 'imgs/bonecos_fruntigeraero-MSN_10pcs.png'
   },
-
 
   {
     id: 39,
     categoria: 'Outros',
-    nome: 'Bonecos Frutiger Aero - MSN (10 peças)',
-    descricao: 'Bonecos estilo Frutiger Aero - MSN (10 peças).',
-    preco: 30.00,
-    imagem: 'imgs/bonecos_fruntigeraero-MSN_10pcs.png'
-  },
-
-  {
-    id: 40,
-    categoria: 'Outros',
     nome: 'Bixo de Pelucia Fruntiger Aero - Axoloti',
     descricao: 'Bixo de Pelucia estilo Frutiger Aero - Axoloti.',
-    preco: 30.00,
+    preco: 65.00,
     imagem: 'imgs/bixodepelucia_fruntigeraero_axoloti.png'
   },
 

@@ -14,7 +14,7 @@
           <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Salgados' }">Salgados</a>
           <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Doces' }">Doces</a>
           <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Lanches' }">Lanches</a>
-          <a routerLink="/resultado-busca">Outros</a>
+          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Outros' }">Outros</a>
         </div>
       </div>
       <!--Botão para acessar a pagina de Cadastro-->
@@ -35,7 +35,9 @@
         <a routerLink="/login" class="btn aero">Login</a>
       </div>
 
-
+      <div class="menu-item">
+        <button class="btn aero" (click)="auth.logout()">Logout</button>
+      </div>
 
 
 
@@ -127,8 +129,8 @@
         <div class="d-flex flex-column align-items-center">
           @if ( auth.verificarLogin() ) {
             <a routerLink="/perfil">
-              <div class="logo-placeholder2">
-                <img src="imgs/peixe-quadrado.png" alt="Ícone de avatar" style="width: 100px; height: 100px;">
+              <div class="logo-placeholder2" style="margin-top: 10px;">
+                <img src="imgs/peixe-quadrado.png" alt="Ícone de avatar" style="width: 80px; height: 80px;">
               </div>
             </a>
           <p>Olá, {{ auth.getClient().nome }}!</p>
