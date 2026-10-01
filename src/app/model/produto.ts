@@ -158,7 +158,7 @@ export const produtos: Produto[] = [
     nome: 'Croassant - Frango',
     descricao: 'Croassant sabor frango 131g.',
     preco: 7.00,
-    imagem: 'imgs/Coassant.png'
+    imagem: 'imgs/croassant.png'
   },
 
 ];
