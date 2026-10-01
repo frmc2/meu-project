@@ -50,7 +50,10 @@
             <!-- Ações -->
             <nav class="produto-detalhe-acoes">
                 <button class="aero-button" type="button" (click)="adicionarNaCesta()">
-                    ADICIONAR À CESTA
+                    COMPRAR
+                </button>
+                <button class="aero-button" type="button" routerLink="/cesta">
+                    VER CESTA
                 </button>
             </nav>
 
@@ -63,3 +66,36 @@
     </div>
 
 </section>
+
+@if (mostrarModalLogin) {
+    <div class="modal-overlay" (click)="fecharModalLogin()">
+        <section
+            class="modal-login"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="detalhe-login-titulo"
+            aria-describedby="detalhe-login-descricao"
+            (click)="$event.stopPropagation()"
+        >
+            <button
+                type="button"
+                class="modal-fechar"
+                aria-label="Fechar aviso"
+                (click)="fecharModalLogin()"
+            >
+                ×
+            </button>
+            <div class="modal-icone" aria-hidden="true">!</div>
+            <h2 id="detalhe-login-titulo">Entre na sua conta</h2>
+            <p id="detalhe-login-descricao">Você precisa fazer login antes de comprar.</p>
+            <div class="modal-acoes">
+                <button type="button" class="aero-button" (click)="fecharModalLogin()">
+                    CONTINUAR COMPRANDO
+                </button>
+                <a routerLink="/login" class="aero-button" (click)="fecharModalLogin()">
+                    FAZER LOGIN
+                </a>
+            </div>
+        </section>
+    </div>
+}

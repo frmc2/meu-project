@@ -10,10 +10,10 @@
         <div class="button-aero">Produtos</div>
 
         <div class="dropdown">
-          <a routerLink="/resultado-busca">Bebidas</a>
-          <a routerLink="/resultado-busca">Salgados</a>
-          <a routerLink="/resultado-busca">Sobremesas</a>
-          <a routerLink="/resultado-busca">Lanches</a>
+          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Bebidas' }">Bebidas</a>
+          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Salgados' }">Salgados</a>
+          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Doces' }">Doces</a>
+          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Lanches' }">Lanches</a>
           <a routerLink="/resultado-busca">Outros</a>
         </div>
       </div>
@@ -25,6 +25,11 @@
       <div class="menu-item">
         <a routerLink="/cesta" class="btn aero">Cesta</a>
       </div>
+      <!--Botão para acessar a pagina de Vitrine-->
+      <div class="menu-item">
+        <a routerLink="" class="btn aero">Vitrine</a>
+      </div>
+
       <!--Botão para acessar a pagina de login-->
       <div class="menu-item">
         <a routerLink="/login" class="btn aero">Login</a>

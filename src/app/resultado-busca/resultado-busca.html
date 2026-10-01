@@ -1,1 +1,64 @@
-<p>resultado-busca works!</p>
+<section class="produtos-grid">
+  @for (produto of produtosFiltrados(); track produto.id) {
+    <article class="produto-card">
+      <div class="produto-imagem">
+        <img [src]="produto.imagem" [alt]="produto.nome">
+      </div>
+      <div class="produto-info">
+        <h3>{{ produto.nome }}</h3>
+        <strong>R$ {{ produto.preco.toFixed(2) }}</strong>
+      </div>
+      <p class="produto-descricao">{{ produto.descricao }}</p>
+
+      <div class="produto-acoes">
+        <button type="button" [routerLink]="['/detalhe-produto', produto.id]" class="aero-button">
+          DETALHES
+        </button>
+        <button type="button" class="aero-button" (click)="adicionarNaCesta(produto)">
+          COMPRAR
+        </button>
+      </div>
+
+      @if (produtoAdicionadoId === produto.id) {
+        <p class="mensagem-cesta" role="status">✓ {{ mensagemCesta }}</p>
+      }
+    </article>
+  } @empty {
+    <p>Nenhum produto encontrado para esse termo ou filtro.</p>
+  }
+</section>
+
+<!-- pop up obrigando o usuario a fazer o login-->
+
+@if (mostrarModalLogin) {
+  <div class="modal-overlay" (click)="fecharModalLogin()">
+    <section
+      class="modal-login"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="resultado-login-titulo"
+      aria-describedby="resultado-login-descricao"
+      (click)="$event.stopPropagation()"
+    >
+      <button
+        type="button"
+        class="modal-fechar"
+        aria-label="Fechar aviso"
+        (click)="fecharModalLogin()"
+      >
+        ×
+      </button>
+      <div class="modal-icone" aria-hidden="true">!</div>
+      <h2 id="resultado-login-titulo">Entre na sua conta</h2>
+      <p id="resultado-login-descricao">Você precisa fazer login antes de comprar.</p>
+      <div class="modal-acoes">
+        <button type="button" class="aero-button" (click)="fecharModalLogin()">
+          CONTINUAR COMPRANDO
+        </button>
+        <a routerLink="/login" class="aero-button" (click)="fecharModalLogin()">
+          FAZER LOGIN
+        </a>
+      </div>
+    </section>
+  </div>
+}
