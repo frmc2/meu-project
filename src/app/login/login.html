@@ -8,7 +8,7 @@
         <h2>Login</h2>
     </div>
 
-
+    <div class="content-section" style="max-width: 480px; align-self: center; justify-content: center; text-align: center;">
         <form (ngSubmit)="login()">
 
             <div class="form-group">
@@ -21,15 +21,16 @@
                 <input id="password" type="password" name="senha" placeholder="Sua senha" [(ngModel)]="senha" required>
             </div>
 
+            <!--
             <div class="form-options">
                 <label class="remember">
                     <input type="checkbox">
                     Lembrar de mim
                 </label>
-
             </div>
+            -->
 
-            <nav>
+            <nav style="margin-bottom: 10px; text-align: center;">
                 <a routerLink="/esqueci-senha">esqueci a senha</a>
             </nav>
 
@@ -41,19 +42,20 @@
             <p role="alert">{{ erro }}</p>
             }
         </form>
-        @if(auth.verificarLogin()){
+        <!--
         <div class="content-section">
             <h2>Você já está logado!</h2>
             <p>Redirecionando para a página inicial...</p>
         </div>
-        }
+        -->
 
-    <div class="form-footer">
-        <span>Não possui uma conta?</span>
+        <div class="form-footer">
+            <span>Não possui uma conta?</span>
 
-        <a routerLink="/cadastro">
-            Criar uma conta
-        </a>
+            <a routerLink="/cadastro">
+                Criar uma conta
+            </a>
+        </div>
+
     </div>
-
 </div>

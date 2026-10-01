@@ -1,0 +1,228 @@
+/* =====================================================
+   ESQUECI A SENHA
+   ===================================================== */
+
+.forgot-password {
+    width: 100%;
+
+    min-height: 450px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   CARD
+   ===================================================== */
+
+.forgot-password-card {
+
+    width: 100%;
+    max-width: 480px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 35px 40px;
+
+    border-radius: 14px;
+
+    background:
+
+        linear-gradient(135deg,
+            rgba(255, 255, 255, .62),
+            rgba(210, 245, 255, .55),
+            rgba(255, 255, 255, .45));
+
+    border:
+        1px solid rgba(255, 255, 255, .9);
+
+    box-shadow:
+
+        inset 0 1px white,
+
+        0 5px 18px rgba(0, 80, 120, .25);
+}
+
+
+/* =====================================================
+   CONTEÚDO
+   ===================================================== */
+
+.forgot-password-content {
+
+    width: 100%;
+
+    text-align: center;
+}
+
+
+.forgot-password-content h2 {
+
+    margin:
+        0 0 10px;
+
+    color: #0875a8;
+
+    font-size: 27px;
+
+    text-shadow:
+        0 1px white,
+        0 2px 3px rgba(0, 100, 150, .2);
+}
+
+.form-group {
+    height: 55px;
+    box-sizing: border-box;
+}
+
+.forgot-password-content p {
+
+    margin:
+        0 auto 25px;
+
+    max-width: 390px;
+
+    color: white;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    text-shadow:
+        0 1px #39758b;
+}
+
+
+/* =====================================================
+   FORM
+   ===================================================== */
+
+.forgot-password .form-group {
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    text-align: left;
+}
+
+
+.forgot-password .form-group label {
+
+    margin-bottom: 5px;
+
+    color: #24566a;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-shadow:
+        0 1px white;
+}
+
+
+/*
+   Sobrescreve algumas propriedades do seu
+   .form-group input para esta tela.
+*/
+
+.forgot-password .form-group input {
+
+    width: 100%;
+
+    min-width: 0;
+
+    height: 40px;
+
+    margin-top: 0;
+    margin-bottom: 18px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BOTÃO
+   ===================================================== */
+
+.forgot-password-button {
+
+    width: 100%;
+
+    height: 42px;
+
+    margin-top: 2px;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   VOLTAR
+   ===================================================== */
+
+.forgot-password-back {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    color: #0875a8;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    text-shadow:
+        0 1px white;
+
+    transition:
+        .15s ease;
+}
+
+
+.forgot-password-back:hover {
+
+    color: #005b89;
+
+    text-decoration: underline;
+
+    transform: translateX(-2px);
+}
+
+
+/* =====================================================
+   RESPONSIVO
+   ===================================================== */
+
+@media (max-width: 550px) {
+
+    .forgot-password {
+
+        min-height: 400px;
+    }
+
+    .forgot-password-card {
+
+        padding:
+            28px 22px;
+    }
+
+    .forgot-password-content h2 {
+
+        font-size: 23px;
+    }
+
+}

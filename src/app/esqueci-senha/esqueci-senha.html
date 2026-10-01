@@ -1,1 +1,55 @@
-<p>esqueci-senha works!</p>
+<div class="forgot-password">
+
+  <div class="forgot-password-card">
+
+    <div class="logo-placeholder">
+      <img src="imgs/globo.png" height="100">
+    </div>
+
+    <div class="content-section">
+
+      <h2>Esqueci minha senha</h2>
+
+      <p>
+        Digite seu e-mail abaixo e enviaremos as instruções
+        para redefinir sua senha.
+      </p>
+
+      <form (ngSubmit)="verificarEmail()">
+
+        <div class="form-group" style="margin-top: 10px;">
+
+          <input
+            id="email"
+            type="email"
+            placeholder="Digite seu e-mail"
+          />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 20px;">
+
+          <input
+            id="senha"
+            type="password"
+            placeholder="Digite sua nova senha"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="aero-button forgot-password-button"
+        >
+          Enviar link
+        </button>
+
+      </form>
+
+      <a routerLink="/login" style="margin-top: 10px;">
+        ← Voltar para o login
+      </a>
+
+    </div>
+
+  </div>
+
+</div>

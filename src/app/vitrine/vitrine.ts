@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { BarraBusca } from '../barra-busca/barra-busca';
 import { Produto, produtos } from '../model/produto';
 import { CestaService } from '../cesta/cesta.service';
 import { AuthService } from '../services/auth';
@@ -8,7 +7,7 @@ import { AuthService } from '../services/auth';
 @Component({
   selector: 'app-vitrine',
   standalone: true,
-  imports: [RouterLink, BarraBusca],
+  imports: [RouterLink],
   templateUrl: './vitrine.html',
   styleUrl: './vitrine.css',
 })

@@ -22,13 +22,6 @@
   width: 100%;
 }
 
-/*.form-busca label {
-  color: #24566a;
-  font-weight: bold;
-  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-  text-shadow: 0 1px white;
-}*/
-
 .form-busca input {
   padding-left: 12px;
   flex: 1;
