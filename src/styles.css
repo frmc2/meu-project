@@ -164,6 +164,12 @@ body {
    MENU
    ===================================================== */
 
+.menubar-shell {
+    position: relative;
+    z-index: 20;
+    overflow: visible;
+}
+
 .aero-menubar {
 
     height: 30px;
@@ -212,6 +218,30 @@ body {
         0 1px white;
 }
 
+.button-aero {
+    appearance: none;
+    display: block;
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-sizing: content-box;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    text-shadow: inherit;
+    background: transparent;
+    cursor: pointer;
+}
+
+.button-aero:focus-visible {
+    outline: 2px solid #0875a8;
+    outline-offset: 3px;
+}
+
 
 .menu-item:hover {
 
@@ -258,8 +288,20 @@ body {
 }
 
 
-.menu-item:hover .dropdown {
+.menubar-shell.menu-open > .dropdown {
     display: block;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .menubar-shell:has(.products-trigger:hover) > .dropdown,
+    .menubar-shell:has(> .dropdown:hover) > .dropdown {
+        display: block;
+    }
+}
+
+.menubar-shell > .dropdown {
+    top: calc(100% - 1px);
+    left: 8px;
 }
 
 
@@ -765,8 +807,19 @@ body {
     .aero-menubar {
 
         overflow-x: auto;
+        overflow-y: hidden;
 
         white-space: nowrap;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .aero-menubar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .aero-menubar .menu-item {
+        flex: 0 0 auto;
     }
 
 

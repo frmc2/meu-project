@@ -4,43 +4,51 @@
 
     <!--Menu Superior-->
 
-    <nav class="aero-menubar">
-      <!--Botão para acessar a pagina de DetalheProduto-->
-      <div class="menu-item">
-        <div class="button-aero">Produtos</div>
+    <nav class="menubar-shell" aria-label="Navegação principal" [class.menu-open]="menuProdutosAberto">
+      <div class="aero-menubar">
+        <!--Botão para acessar a pagina de DetalheProduto-->
+        <div class="menu-item products-trigger">
+          <button
+            type="button"
+            class="button-aero"
+            aria-controls="menu-produtos-dropdown"
+            [attr.aria-expanded]="menuProdutosAberto"
+            (click)="alternarMenuProdutos()"
+          >
+            Produtos
+          </button>
+        </div>
 
-        <div class="dropdown">
-          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Bebidas' }">Bebidas</a>
-          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Salgados' }">Salgados</a>
-          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Doces' }">Doces</a>
-          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Lanches' }">Lanches</a>
-          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Outros' }">Outros</a>
+        <!--Botão para acessar a pagina de Cadastro-->
+        <div class="menu-item">
+          <a routerLink="/cadastro" class="btn aero" (click)="fecharMenuProdutos()">Cadastro</a>
+        </div>
+        <!--Botão para acessar a pagina de Cesta-->
+        <div class="menu-item">
+          <a routerLink="/cesta" class="btn aero" (click)="fecharMenuProdutos()">Cesta</a>
+        </div>
+        <!--Botão para acessar a pagina de Vitrine-->
+        <div class="menu-item">
+          <a routerLink="" class="btn aero" (click)="fecharMenuProdutos()">Vitrine</a>
+        </div>
+
+        <!--Botão para acessar a pagina de login-->
+        <div class="menu-item">
+          <a routerLink="/login" class="btn aero" (click)="fecharMenuProdutos()">Login</a>
+        </div>
+
+        <div class="menu-item">
+          <button class="btn aero" (click)="auth.logout()">Logout</button>
         </div>
       </div>
-      <!--Botão para acessar a pagina de Cadastro-->
-      <div class="menu-item">
-        <a routerLink="/cadastro" class="btn aero">Cadastro</a>
-      </div>
-      <!--Botão para acessar a pagina de Cesta-->
-      <div class="menu-item">
-        <a routerLink="/cesta" class="btn aero">Cesta</a>
-      </div>
-      <!--Botão para acessar a pagina de Vitrine-->
-      <div class="menu-item">
-        <a routerLink="" class="btn aero">Vitrine</a>
-      </div>
 
-      <!--Botão para acessar a pagina de login-->
-      <div class="menu-item">
-        <a routerLink="/login" class="btn aero">Login</a>
+      <div class="dropdown" id="menu-produtos-dropdown">
+        <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Bebidas' }" (click)="fecharMenuProdutos()">Bebidas</a>
+        <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Salgados' }" (click)="fecharMenuProdutos()">Salgados</a>
+        <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Doces' }" (click)="fecharMenuProdutos()">Doces</a>
+        <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Lanches' }" (click)="fecharMenuProdutos()">Lanches</a>
+        <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Outros' }" (click)="fecharMenuProdutos()">Outros</a>
       </div>
-
-      <div class="menu-item">
-        <button class="btn aero" (click)="auth.logout()">Logout</button>
-      </div>
-
-
-
     </nav>
 
 
