@@ -1,6 +1,5 @@
 <div class="aero-desktop">
   <!--Janela Principal do site, que contém o menu superior, a barra de título, o cabeçalho do site, a área principal, o rodapé e a barra de status.-->
-
   <div class="aero-window">
 
     <!--Menu Superior-->
@@ -101,13 +100,15 @@
           </span>
 
         </div>
-
+        
       </div>
 
-
+      <div class="site-header-search">
+        <app-barra-busca></app-barra-busca>
+      </div>
       <div class="site-header-extra">
 
-
+        
 
         <!--
           Aqui futuramente você pode colocar:
@@ -123,19 +124,18 @@
         <!--Exemplo de avatar e caminho também para pagina de Login-->
         <div class="d-flex flex-column align-items-center">
           @if ( auth.verificarLogin() ) {
-            <a routerLink="/login">
+            <a routerLink="/perfil">
               <div class="logo-placeholder2">
                 <img src="imgs/peixe-quadrado.png" alt="Ícone de avatar" style="width: 100px; height: 100px;">
               </div>
             </a>
           <p>Olá, {{ auth.getClient() }}!</p>
           } @else {
-            <a routerLink="/login">
-              <div class="logo-placeholder" routerLink="/login">
+            <a routerLink="/perfil">
+              <div class="logo-placeholder">
                 <img src="imgs/avatar_buddy.png" alt="Ícone de avatar"
                   style="width: 70px; height: 70px; border-radius: 50%;">
               </div>
-              <p>login</p>
             </a>
           }
         </div>

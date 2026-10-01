@@ -33,7 +33,7 @@ body {
 
     overflow-x: hidden;
 
-    background:
+    /*background:
 
         radial-gradient(circle at 15% 20%,
             rgba(255, 255, 255, .95),
@@ -51,7 +51,11 @@ body {
             #00a9e8 0%,
             #00d8a0 40%,
             #75dc35 70%,
-            #00a9e8 100%);
+            #00a9e8 100%);*/
+    background-image: url('/imgs/background2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
@@ -59,7 +63,7 @@ body {
    BOLHAS DO FUNDO
    ===================================================== */
 
-.aero-desktop::before {
+/*.aero-desktop::before {
 
     content: "";
 
@@ -107,7 +111,7 @@ body {
         radial-gradient(circle,
             rgba(255, 255, 255, .6) 40%,
             transparent 95%);
-}
+}*/
 
 
 /* =====================================================
@@ -115,16 +119,6 @@ body {
    ===================================================== */
 
 .aero-window {
-
-    /*
-       ==============================================
-       2 - 8 - 2
-       ==============================================
-
-       10% esquerda
-       80% janela
-       10% direita
-    */
 
     width: 80%;
 
@@ -546,10 +540,10 @@ body {
     background:
 
         linear-gradient(135deg,
-            rgba(255, 255, 255, 0.45),
-            rgba(255, 255, 255, .3),
-            rgba(255, 255, 255, 0.6),
-            rgba(255, 255, 255, .2));
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.2));
 
     color: #234;
 

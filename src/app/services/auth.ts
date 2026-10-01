@@ -1,46 +1,46 @@
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
+
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    readonly logado = signal(false);
-
-    private readonly platformId = inject(PLATFORM_ID);
-
-    private get isBrowser(): boolean {
-        return isPlatformBrowser(this.platformId);
-    }
+verifyLogin() {
+throw new Error('Method not implemented.');
+}
+    logado = signal(false);
+    
+    private platformId = inject(PLATFORM_ID);
 
     setClient(nome: string) {
-        if (this.isBrowser) {
-            localStorage.setItem('nome', nome);
-        }
+        localStorage.setItem('nome', nome);
     }
 
     getClient() {
-        return this.isBrowser ? localStorage.getItem('nome') ?? '' : '';
+        const usuario = localStorage.getItem('usuario');
+
+        if (!usuario) {
+            return null;
+        }
+
+        return JSON.parse(usuario);
     }
 
     login() {
         this.logado.set(true);
-
-        if (this.isBrowser) {
-            localStorage.setItem('logado', 'true');
-            localStorage.setItem('nome', 'Usuário');
-        }
+        localStorage.setItem('logado', 'true');
+        localStorage.setItem('nome', '');
     }
 
     logout() {
         this.logado.set(false);
-
-        if (this.isBrowser) {
-            localStorage.removeItem('logado');
-        }
+        localStorage.removeItem('logado');
+        localStorage.removeItem('nome');
     }
 
     verificarLogin() {
-        return this.isBrowser && localStorage.getItem('logado') === 'true';
+        return localStorage.getItem('logado') === 'true';
     }
 }

@@ -8,6 +8,7 @@ import { Vitrine } from './vitrine/vitrine';
 import { Reenvio } from './reenvio/reenvio';
 import { DetalheProduto } from './detalhe-produto/detalhe-produto';
 import { EsqueciSenha } from './esqueci-senha/esqueci-senha';
+import { Perfil } from './perfil/perfil';
 
 export const routes: Routes = [
     {path:"", component: Vitrine, pathMatch: 'full' },
@@ -18,5 +19,6 @@ export const routes: Routes = [
     {path:"", component: BarraBusca },
     {path:"reenvio", component: Reenvio },
     {path:"detalhe-produto/:id", component: DetalheProduto },
-    {path:"esqueci-senha", component: EsqueciSenha }
+    {path:"esqueci-senha", component: EsqueciSenha },
+    {path:"perfil", component: Perfil }
 ];
