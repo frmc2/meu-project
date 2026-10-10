@@ -25,6 +25,7 @@ export class App {
   }
 
   protected readonly title = signal('meu-project');
+  menuProdutosAberto = false;
 
   private platformId = inject(PLATFORM_ID);
 
@@ -35,5 +36,13 @@ export class App {
     if (isPlatformBrowser(this.platformId)) {
       this.auth.verificarLogin();
     }
+  }
+
+  alternarMenuProdutos(): void {
+    this.menuProdutosAberto = !this.menuProdutosAberto;
+  }
+
+  fecharMenuProdutos(): void {
+    this.menuProdutosAberto = false;
   }
 }
