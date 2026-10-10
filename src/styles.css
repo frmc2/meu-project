@@ -28,45 +28,34 @@ body {
 .aero-desktop {
 
     min-height: 100vh;
-
     position: relative;
-
     overflow-x: hidden;
-
-    /*background-image: url('/imgs/background2.jpg');
+    overflow-y: auto;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;*/
-
-    background:
-
-        radial-gradient(circle at 15% 20%,
-            rgba(255, 255, 255, .95),
-            transparent 18%),
-
-        radial-gradient(circle at 85% 30%,
-            rgba(100, 255, 255, .55),
-            transparent 22%),
-
-        radial-gradient(circle at 50% 100%,
-            rgba(150, 255, 100, .5),
-            transparent 30%),
-
-        linear-gradient(135deg,
-            #00a9e8 0%,
-            #00d8a0 40%,
-            #75dc35 70%,
-            #00a9e8 100%);
-            
-    
+    background-attachment: fixed;
 }
+/* fundo padrão */
+.aero-desktop.bg-imagem {
+  background: url('/imgs/background2.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.aero-desktop.bg-padrao {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, .95), transparent 18%),
+    radial-gradient(circle at 85% 30%, rgba(100, 255, 255, .55), transparent 22%),
+    radial-gradient(circle at 50% 100%, rgba(150, 255, 100, .5), transparent 30%),
+    linear-gradient(135deg, #00a9e8 0%, #00d8a0 40%, #75dc35 70%, #00a9e8 100%);
+}
+
 
 
 /* =====================================================
    BOLHAS DO FUNDO
    ===================================================== */
 
-.aero-desktop::before {
+.aero-desktop.bg-padrao::before {
 
     content: "";
 
@@ -93,7 +82,7 @@ body {
 }
 
 
-.aero-desktop::after {
+.aero-desktop.bg-padrao::after {
 
     content: "";
 
@@ -922,4 +911,26 @@ body {
             transparent,
             rgba(255, 255, 255, 0.8),
             transparent);
+}
+
+#botao-detalhes {
+    background:
+        linear-gradient(180deg,
+            #ffffff,
+            #a0c4ff ,
+            #0077ff );
+}
+#botao-comprar {
+    background:
+        linear-gradient(180deg,
+            #ffffff,
+            #b9fbc0  ,
+            #2ecc71  );
+}
+
+#botao-detalhes:hover {
+  background: linear-gradient(180deg, #ffffff, #a0c4ffc5, #0077ff81);
+}
+#botao-comprar:hover {
+  background: linear-gradient(180deg, #ffffff, #b9fbc0c4, #2ecc7181);
 }

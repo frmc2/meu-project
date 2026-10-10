@@ -11,10 +11,10 @@
       <p class="produto-descricao">{{ produto.descricao }}</p>
 
       <div class="produto-acoes">
-        <button type="button" [routerLink]="['/detalhe-produto', produto.id]" class="aero-button">
+        <button id="botao-detalhes" type="button" [routerLink]="['/detalhe-produto', produto.id]" class="aero-button">
           DETALHES
         </button>
-        <button type="button" class="aero-button" (click)="adicionarNaCesta(produto)">
+        <button id="botao-comprar" type="button" class="aero-button" (click)="adicionarNaCesta(produto)">
           COMPRAR
         </button>
       </div>

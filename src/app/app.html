@@ -1,4 +1,5 @@
-<div class="aero-desktop">
+<div class="aero-desktop" [class.bg-imagem]="backgroundClass === 'imagem' " [class.bg-padrao]="backgroundClass === 'padrao'">
+
   <!--Janela Principal do site, que contém o menu superior, a barra de título, o cabeçalho do site, a área principal, o rodapé e a barra de status.-->
   <div class="aero-window">
 
@@ -7,15 +8,16 @@
     <nav class="aero-menubar">
       <!--Botão para acessar a pagina de DetalheProduto-->
       <div class="menu-item">
-        <div class="button-aero">Produtos</div>
-
-        <div class="dropdown">
-          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Bebidas' }">Bebidas</a>
-          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Salgados' }">Salgados</a>
-          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Doces' }">Doces</a>
-          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Lanches' }">Lanches</a>
-          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Outros' }">Outros</a>
-        </div>
+        <div class="button-aero" ontouchstart="dropdownOpen()" (blur)="dropdownOpen.set(false)">Produtos</div>
+          @if (dropdownOpen()) {
+            <div class="dropdown">
+              <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Bebidas' }">Bebidas</a>
+              <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Salgados' }">Salgados</a>
+              <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Doces' }">Doces</a>
+              <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Lanches' }">Lanches</a>
+              <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Outros' }">Outros</a>
+            </div>
+          }
       </div>
       <!--Botão para acessar a pagina de Cadastro-->
       <div class="menu-item">
@@ -39,6 +41,12 @@
         <button class="btn aero" (click)="auth.logout()">Logout</button>
       </div>
 
+      <div class="menu-item">
+        <button class="btn aero" (click)="trocarBackground('padrao')">Padrão</button>
+      </div>
+      <div class="menu-item">
+        <button class="btn aero" (click)="trocarBackground('imagem')">Imagem</button>
+      </div>
 
 
     </nav>

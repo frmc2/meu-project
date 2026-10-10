@@ -111,3 +111,14 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 770px) {
+  .produto-imagem {
+    height: 400px;
+  }
+  .produto-imagem img{
+    height: 100%;
+    width: 100%;
+  }
+}
+

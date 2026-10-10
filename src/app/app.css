@@ -3,3 +3,12 @@
     justify-content: center;
     display: flex;
 }
+
+.button-aero:active {
+    background:
+
+        linear-gradient(180deg,
+            #ffffff,
+            #aaf0ff,
+            #4fc8e7);
+}

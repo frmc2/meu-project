@@ -199,3 +199,18 @@
     flex-direction: column;
   }
 }
+
+#botao-detalhes {
+    background:
+        linear-gradient(180deg,
+            #ffffff,
+            #a0c4ff ,
+            #0077ff );
+}
+#botao-comprar {
+    background:
+        linear-gradient(180deg,
+            #ffffff,
+            #b9fbc0  ,
+            #2ecc71  );
+}

@@ -3,19 +3,33 @@ import { Component, inject, PLATFORM_ID, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { AuthService } from './services/auth';
 import { BarraBusca } from './barra-busca/barra-busca';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterLink, RouterOutlet, BarraBusca],
+  imports: [RouterLink, RouterOutlet, BarraBusca, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
+  dropdownOpen = signal(true);
+  
+  backgroundClass: 'padrao' | 'imagem' = 'padrao';
+
+  trocarBackground(opcao: 'padrao' | 'imagem') {
+    this.backgroundClass = opcao;
+  }
+
+  toggleDropdown() {
+    this.dropdownOpen.set(!this.dropdownOpen());
+  }
+
   protected readonly title = signal('meu-project');
 
   private platformId = inject(PLATFORM_ID);
 
   auth = inject(AuthService);
+
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
