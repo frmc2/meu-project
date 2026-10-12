@@ -164,6 +164,7 @@ body {
     height: 30px;
 
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
 
     gap: 4px;
@@ -253,11 +254,14 @@ body {
     display: none;
 
     position: absolute;
+    z-index: 30;
 
     top: 100%;
     left: 0;
 
     min-width: 180px;
+    max-width: calc(100vw - 32px);
+    box-sizing: border-box;
 
     padding: 5px;
 
@@ -797,6 +801,8 @@ body {
 
         overflow-x: auto;
         overflow-y: hidden;
+        max-width: 100%;
+        box-sizing: border-box;
 
         white-space: nowrap;
         scrollbar-width: none;

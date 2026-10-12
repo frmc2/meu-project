@@ -5,31 +5,31 @@
 
     <!--Menu Superior-->
 
-    <nav class="aero-menubar">
-      <!--Botão para acessar a pagina de DetalheProduto-->
-      <div class="menu-item">
-        <div class="button-aero" ontouchstart="dropdownOpen()" (blur)="dropdownOpen.set(false)">Produtos</div>
-          @if (dropdownOpen()) {
-            <div class="dropdown">
-              <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Bebidas' }" (click)="fecharMenuProdutos()">Bebidas</a>
-              <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Salgados' }" (click)="fecharMenuProdutos()">Salgados</a>
-              <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Doces' }" (click)="fecharMenuProdutos()">Doces</a>
-              <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Lanches' }" (click)="fecharMenuProdutos()">Lanches</a>
-              <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Outros' }" (click)="fecharMenuProdutos()">Outros</a>
-            </div>
-          }
-      </div>
+    <nav class="menubar-shell" aria-label="Navegação principal" [class.menu-open]="dropdownOpen()" (keydown.escape)="fecharMenuProdutos()">
+      <div class="aero-menubar">
+        <!--Botão para acessar a pagina de DetalheProduto-->
+        <div class="menu-item products-trigger">
+          <button
+            type="button"
+            class="button-aero"
+            aria-controls="menu-produtos-dropdown"
+            [attr.aria-expanded]="dropdownOpen()"
+            (click)="toggleDropdown()"
+          >
+            Produtos
+          </button>
+        </div>
       <!--Botão para acessar a pagina de Cadastro-->
       <div class="menu-item">
-        <a routerLink="/cadastro" class="btn aero">Cadastro</a>
+        <a routerLink="/cadastro" class="btn aero" (click)="fecharMenuProdutos()">Cadastro</a>
       </div>
       <!--Botão para acessar a pagina de Cesta-->
       <div class="menu-item">
-        <a routerLink="/cesta" class="btn aero">Cesta</a>
+        <a routerLink="/cesta" class="btn aero" (click)="fecharMenuProdutos()">Cesta</a>
       </div>
       <!--Botão para acessar a pagina de Vitrine-->
       <div class="menu-item">
-        <a routerLink="" class="btn aero">Vitrine</a>
+        <a routerLink="" class="btn aero" (click)="fecharMenuProdutos()">Vitrine</a>
       </div>
 
         <!--Botão para acessar a pagina de login-->
@@ -38,18 +38,27 @@
         </div>
 
         <div class="menu-item">
-          <button class="btn aero" (click)="auth.logout()">Logout</button>
+          <button type="button" class="btn aero" (click)="fecharMenuProdutos(); auth.logout()">Logout</button>
         </div>
-      </div>
 
       <div class="menu-item">
-        <button class="btn aero" (click)="trocarBackground('padrao')">Padrão</button>
+        <button type="button" class="btn aero" (click)="fecharMenuProdutos(); trocarBackground('padrao')">Padrão</button>
       </div>
       <div class="menu-item">
-        <button class="btn aero" (click)="trocarBackground('imagem')">Imagem</button>
+        <button type="button" class="btn aero" (click)="fecharMenuProdutos(); trocarBackground('imagem')">Imagem</button>
       </div>
 
+      </div>
 
+      @if (dropdownOpen()) {
+        <div class="dropdown" id="menu-produtos-dropdown">
+          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Bebidas' }" (click)="fecharMenuProdutos()">Bebidas</a>
+          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Salgados' }" (click)="fecharMenuProdutos()">Salgados</a>
+          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Doces' }" (click)="fecharMenuProdutos()">Doces</a>
+          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Lanches' }" (click)="fecharMenuProdutos()">Lanches</a>
+          <a routerLink="/resultado-busca" [queryParams]="{ categoria: 'Outros' }" (click)="fecharMenuProdutos()">Outros</a>
+        </div>
+      }
     </nav>
 
 

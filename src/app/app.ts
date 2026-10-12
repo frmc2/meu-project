@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.css'
 })
 export class App {
-  dropdownOpen = signal(true);
+  dropdownOpen = signal(false);
   
   backgroundClass: 'padrao' | 'imagem' = 'padrao';
 
@@ -20,12 +20,15 @@ export class App {
     this.backgroundClass = opcao;
   }
 
-  toggleDropdown() {
-    this.dropdownOpen.set(!this.dropdownOpen());
+  toggleDropdown(): void {
+    this.dropdownOpen.update(isOpen => !isOpen);
+  }
+
+  fecharMenuProdutos(): void {
+    this.dropdownOpen.set(false);
   }
 
   protected readonly title = signal('meu-project');
-  menuProdutosAberto = false;
 
   private platformId = inject(PLATFORM_ID);
 
@@ -38,11 +41,4 @@ export class App {
     }
   }
 
-  alternarMenuProdutos(): void {
-    this.menuProdutosAberto = !this.menuProdutosAberto;
-  }
-
-  fecharMenuProdutos(): void {
-    this.menuProdutosAberto = false;
-  }
 }
