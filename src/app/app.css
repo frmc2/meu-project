@@ -12,3 +12,64 @@
             #aaf0ff,
             #4fc8e7);
 }
+
+.palette-trigger {
+    flex: 0 0 auto;
+}
+
+.palette-toggle {
+    white-space: nowrap;
+}
+
+.palette-dropdown {
+    position: absolute;
+    z-index: 40;
+    top: calc(100% + 6px);
+    right: 0;
+    display: grid;
+    gap: 4px;
+    width: min(230px, calc(100vw - 32px));
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid rgba(90, 170, 195, .65);
+    border-radius: 8px;
+    background: rgba(248, 253, 255, .98);
+    box-shadow: 0 6px 18px rgba(0, 50, 80, .25);
+    white-space: normal;
+}
+
+.palette-dropdown-title {
+    padding: 2px 5px 5px;
+    color: #06466c;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.palette-option {
+    padding: 7px 9px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: transparent;
+    color: #123;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.palette-option:hover,
+.palette-option[aria-pressed="true"] {
+    border-color: #0875a8;
+    background: #d8f2fa;
+}
+
+.palette-option:focus-visible {
+    outline: 3px solid #0875a8;
+    outline-offset: 2px;
+}
+
+.palette-dropdown-help {
+    padding: 5px 5px 2px;
+    color: #365766;
+    font-size: 11px;
+    line-height: 1.4;
+}

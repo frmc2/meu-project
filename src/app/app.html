@@ -1,11 +1,11 @@
-<div class="aero-desktop" [class.bg-imagem]="backgroundClass === 'imagem' " [class.bg-padrao]="backgroundClass === 'padrao'">
+<div class="aero-desktop" [class.bg-imagem]="backgroundClass === 'imagem' " [class.bg-padrao]="backgroundClass === 'padrao'" [attr.data-paleta]="paletaDaltonismo()">
 
   <!--Janela Principal do site, que contém o menu superior, a barra de título, o cabeçalho do site, a área principal, o rodapé e a barra de status.-->
   <div class="aero-window">
 
     <!--Menu Superior-->
 
-    <nav class="menubar-shell" aria-label="Navegação principal" [class.menu-open]="dropdownOpen()" (keydown.escape)="fecharMenuProdutos()">
+    <nav class="menubar-shell" aria-label="Navegação principal" [class.menu-open]="dropdownOpen()" (keydown.escape)="fecharMenusComEscape()">
       <div class="aero-menubar">
         <!--Botão para acessar a pagina de DetalheProduto-->
         <div class="menu-item products-trigger">
@@ -46,6 +46,29 @@
       </div>
       <div class="menu-item">
         <button type="button" class="btn aero" (click)="fecharMenuProdutos(); trocarBackground('imagem')">Imagem</button>
+      </div>
+
+      <div class="menu-item palette-trigger">
+        <button
+          type="button"
+          class="button-aero palette-toggle"
+          #paletteToggle
+          aria-controls="menu-paletas-acessiveis"
+          [attr.aria-expanded]="paletteMenuOpen()"
+          (click)="togglePaletteMenu()"
+        >
+          Acessibilidade
+        </button>
+        @if (paletteMenuOpen()) {
+          <div class="palette-dropdown" id="menu-paletas-acessiveis" role="group" aria-label="Escolha uma paleta de cores">
+            <span class="palette-dropdown-title">Paleta de cores</span>
+            <button type="button" class="palette-option" [attr.aria-pressed]="paletaDaltonismo() === 'padrao'" (click)="selecionarPaleta('padrao')">Padrão</button>
+            <button type="button" class="palette-option" [attr.aria-pressed]="paletaDaltonismo() === 'protanopia'" (click)="selecionarPaleta('protanopia')">Protanopia</button>
+            <button type="button" class="palette-option" [attr.aria-pressed]="paletaDaltonismo() === 'deuteranopia'" (click)="selecionarPaleta('deuteranopia')">Deuteranopia</button>
+            <button type="button" class="palette-option" [attr.aria-pressed]="paletaDaltonismo() === 'tritanopia'" (click)="selecionarPaleta('tritanopia')">Tritanopia</button>
+            <span class="palette-dropdown-help">As opções ajustam as cores da interface; textos e rótulos continuam indicando as ações.</span>
+          </div>
+        }
       </div>
 
       </div>

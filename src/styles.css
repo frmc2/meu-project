@@ -993,3 +993,193 @@ body {
 #botao-comprar:hover {
   background: linear-gradient(180deg, #ffffff, #b9fbc0c4, #2ecc7181);
 }
+
+/* Paletas com cores separáveis para diferentes tipos de daltonismo. */
+.aero-desktop[data-paleta="protanopia"] {
+  --paleta-texto: #18364a;
+  --paleta-texto-suave: #3f596a;
+  --paleta-acento: #005a8c;
+  --paleta-acao-secundaria: #914600;
+  --paleta-superficie-nav: #e8f3f8;
+  --paleta-superficie: #f7fafc;
+  --paleta-cartao: #fff;
+  --paleta-borda: #7793a3;
+  --paleta-foco: #713800;
+  --paleta-fundo: linear-gradient(135deg, #dcecf4 0%, #f5f8fa 55%, #f7ead8 100%);
+}
+
+.aero-desktop[data-paleta="deuteranopia"] {
+  --paleta-texto: #28243b;
+  --paleta-texto-suave: #4d4962;
+  --paleta-acento: #51427c;
+  --paleta-acao-secundaria: #805000;
+  --paleta-superficie-nav: #eeeaf5;
+  --paleta-superficie: #faf9fc;
+  --paleta-cartao: #fff;
+  --paleta-borda: #89829d;
+  --paleta-foco: #674000;
+  --paleta-fundo: linear-gradient(135deg, #e5e0f1 0%, #f8f7fa 55%, #f7eedb 100%);
+}
+
+.aero-desktop[data-paleta="tritanopia"] {
+  --paleta-texto: #20392f;
+  --paleta-texto-suave: #465d53;
+  --paleta-acento: #166349;
+  --paleta-acao-secundaria: #9f2944;
+  --paleta-superficie-nav: #e9f3ed;
+  --paleta-superficie: #f8fbf8;
+  --paleta-cartao: #fff;
+  --paleta-borda: #7f978a;
+  --paleta-foco: #85223a;
+  --paleta-fundo: linear-gradient(135deg, #dceee3 0%, #f7faf7 55%, #f5e4e8 100%);
+}
+
+.aero-desktop[data-paleta="protanopia"].bg-padrao,
+.aero-desktop[data-paleta="deuteranopia"].bg-padrao,
+.aero-desktop[data-paleta="tritanopia"].bg-padrao {
+  background: var(--paleta-fundo);
+}
+
+.aero-desktop[data-paleta="protanopia"] .site-header,
+.aero-desktop[data-paleta="protanopia"] .aero-menubar,
+.aero-desktop[data-paleta="protanopia"] .aero-statusbar,
+.aero-desktop[data-paleta="protanopia"] .site-footer,
+.aero-desktop[data-paleta="deuteranopia"] .site-header,
+.aero-desktop[data-paleta="deuteranopia"] .aero-menubar,
+.aero-desktop[data-paleta="deuteranopia"] .aero-statusbar,
+.aero-desktop[data-paleta="deuteranopia"] .site-footer,
+.aero-desktop[data-paleta="tritanopia"] .site-header,
+.aero-desktop[data-paleta="tritanopia"] .aero-menubar,
+.aero-desktop[data-paleta="tritanopia"] .aero-statusbar,
+.aero-desktop[data-paleta="tritanopia"] .site-footer {
+  background: var(--paleta-superficie-nav) !important;
+  color: var(--paleta-texto);
+  text-shadow: none;
+}
+
+.aero-desktop[data-paleta="protanopia"] .site-body,
+.aero-desktop[data-paleta="deuteranopia"] .site-body,
+.aero-desktop[data-paleta="tritanopia"] .site-body {
+  background: var(--paleta-superficie) !important;
+  color: var(--paleta-texto);
+  text-shadow: none;
+}
+
+.aero-desktop:not([data-paleta="padrao"]) .site-body :is(p, span, strong, label, li, small, .produto-na-cesta h3, .cesta-quantidade, .cesta-subtotal, .cesta-total, .cesta-vazia h3, .perfil-info, .form-footer) {
+  color: var(--paleta-texto);
+  text-shadow: none;
+}
+
+.aero-desktop:not([data-paleta="padrao"]) .site-body .cesta-cabecalho {
+  background: var(--paleta-acento);
+  border-color: var(--paleta-acento);
+}
+
+.aero-desktop:not([data-paleta="padrao"]) .site-body .cesta-cabecalho :is(h2, p) {
+  color: #fff !important;
+  text-shadow: none;
+}
+
+.aero-desktop:not([data-paleta="padrao"]) .site-body .cesta-popup-icone {
+  color: #fff;
+  background: var(--paleta-acao-secundaria);
+  border-color: var(--paleta-acao-secundaria);
+}
+
+.aero-desktop[data-paleta="protanopia"] .content-section,
+.aero-desktop[data-paleta="protanopia"] .produto-card,
+.aero-desktop[data-paleta="protanopia"] .modal-login,
+.aero-desktop[data-paleta="protanopia"] .dropdown,
+.aero-desktop[data-paleta="deuteranopia"] .content-section,
+.aero-desktop[data-paleta="deuteranopia"] .produto-card,
+.aero-desktop[data-paleta="deuteranopia"] .modal-login,
+.aero-desktop[data-paleta="deuteranopia"] .dropdown,
+.aero-desktop[data-paleta="tritanopia"] .content-section,
+.aero-desktop[data-paleta="tritanopia"] .produto-card,
+.aero-desktop[data-paleta="tritanopia"] .modal-login,
+.aero-desktop[data-paleta="tritanopia"] .dropdown {
+  border-color: var(--paleta-borda);
+  background: var(--paleta-cartao) !important;
+  color: var(--paleta-texto);
+  text-shadow: none;
+}
+
+.aero-desktop[data-paleta="protanopia"] :is(.logo-text h1, .logo-text span, .site-header-extra, .site-body h2, .site-body h3, .site-body h4, .letras-vitrine, .letras-vitrine h3, .letras-vitrine p, .produto-card h4, .produto-card strong, .produto-imagem, .mensagem-cesta, .dropdown a),
+.aero-desktop[data-paleta="deuteranopia"] :is(.logo-text h1, .logo-text span, .site-header-extra, .site-body h2, .site-body h3, .site-body h4, .letras-vitrine, .letras-vitrine h3, .letras-vitrine p, .produto-card h4, .produto-card strong, .produto-imagem, .mensagem-cesta, .dropdown a),
+.aero-desktop[data-paleta="tritanopia"] :is(.logo-text h1, .logo-text span, .site-header-extra, .site-body h2, .site-body h3, .site-body h4, .letras-vitrine, .letras-vitrine h3, .letras-vitrine p, .produto-card h4, .produto-card strong, .produto-imagem, .mensagem-cesta, .dropdown a) {
+  color: var(--paleta-acento) !important;
+  text-shadow: none;
+}
+
+.aero-desktop[data-paleta="protanopia"] .aero-titlebar,
+.aero-desktop[data-paleta="deuteranopia"] .aero-titlebar,
+.aero-desktop[data-paleta="tritanopia"] .aero-titlebar {
+  background: var(--paleta-acento);
+  color: #fff;
+  text-shadow: none;
+}
+
+.aero-desktop[data-paleta="protanopia"] :is(.button-aero, .btn.aero),
+.aero-desktop[data-paleta="deuteranopia"] :is(.button-aero, .btn.aero),
+.aero-desktop[data-paleta="tritanopia"] :is(.button-aero, .btn.aero) {
+  color: var(--paleta-acento) !important;
+  text-shadow: none;
+}
+
+.aero-desktop[data-paleta="protanopia"] .aero-button,
+.aero-desktop[data-paleta="deuteranopia"] .aero-button,
+.aero-desktop[data-paleta="tritanopia"] .aero-button {
+  border-color: var(--paleta-acento);
+  background: var(--paleta-acento) !important;
+  color: #fff !important;
+  text-shadow: none;
+}
+
+.aero-desktop[data-paleta="protanopia"] #botao-comprar,
+.aero-desktop[data-paleta="deuteranopia"] #botao-comprar,
+.aero-desktop[data-paleta="tritanopia"] #botao-comprar {
+  border-color: var(--paleta-acao-secundaria);
+  background: var(--paleta-acao-secundaria) !important;
+  color: #fff !important;
+}
+
+.aero-desktop[data-paleta="protanopia"] :is(input, select, textarea),
+.aero-desktop[data-paleta="deuteranopia"] :is(input, select, textarea),
+.aero-desktop[data-paleta="tritanopia"] :is(input, select, textarea) {
+  border-color: var(--paleta-borda);
+  color: var(--paleta-texto);
+}
+
+.aero-desktop[data-paleta="protanopia"] :is(button, a, input, select, textarea):focus-visible,
+.aero-desktop[data-paleta="deuteranopia"] :is(button, a, input, select, textarea):focus-visible,
+.aero-desktop[data-paleta="tritanopia"] :is(button, a, input, select, textarea):focus-visible {
+  outline: 3px solid var(--paleta-foco);
+  outline-offset: 3px;
+}
+
+.aero-desktop[data-paleta="protanopia"] .palette-dropdown,
+.aero-desktop[data-paleta="deuteranopia"] .palette-dropdown,
+.aero-desktop[data-paleta="tritanopia"] .palette-dropdown {
+  border-color: var(--paleta-borda);
+  background: var(--paleta-cartao);
+}
+
+.aero-desktop[data-paleta="protanopia"] .palette-dropdown :is(.palette-dropdown-title, .palette-dropdown-help),
+.aero-desktop[data-paleta="deuteranopia"] .palette-dropdown :is(.palette-dropdown-title, .palette-dropdown-help),
+.aero-desktop[data-paleta="tritanopia"] .palette-dropdown :is(.palette-dropdown-title, .palette-dropdown-help) {
+  color: var(--paleta-texto);
+}
+
+.aero-desktop[data-paleta="protanopia"] .palette-option,
+.aero-desktop[data-paleta="deuteranopia"] .palette-option,
+.aero-desktop[data-paleta="tritanopia"] .palette-option {
+  color: var(--paleta-texto);
+}
+
+.aero-desktop[data-paleta="protanopia"] .palette-option[aria-pressed="true"],
+.aero-desktop[data-paleta="deuteranopia"] .palette-option[aria-pressed="true"],
+.aero-desktop[data-paleta="tritanopia"] .palette-option[aria-pressed="true"] {
+  border-color: var(--paleta-acento);
+  background: var(--paleta-acento);
+  color: #fff;
+}
