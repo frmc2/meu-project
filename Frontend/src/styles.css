@@ -1183,3 +1183,14 @@ body {
   background: var(--paleta-acento);
   color: #fff;
 }
+
+/* Mantém os botões do perfil com a aparência Aero padrão em qualquer paleta. */
+.aero-desktop:not([data-paleta="padrao"]) .botao-perfil {
+  border: 1px solid #66bcd7 !important;
+  background: linear-gradient(180deg, #ffffff 0%, #d8f8ff 40%, #76d8ef 100%) !important;
+  color: #075a75 !important;
+}
+
+.aero-desktop:not([data-paleta="padrao"]) .botao-perfil h2 {
+  color: #075a75 !important;
+}
