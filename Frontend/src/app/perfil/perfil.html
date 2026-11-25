@@ -14,12 +14,12 @@
             <p class="form-group"><strong>CPF:&nbsp;</strong> {{ auth.getClient()?.cpf }}</p>
         </div>
 
-        <button class="aero-button" (click)="auth.logout()"><h2>Logout</h2></button>
+        <button class="aero-button botao-perfil" (click)="auth.logout()"><h2>Logout</h2></button>
         } @else {
             <div class="logo-placeholder">
                 <img src="imgs/avatar_buddy.png">
             </div>
-        <button class="aero-button" routerLink="/login"><h2>Login</h2></button>
+        <button class="aero-button botao-perfil" routerLink="/login"><h2>Login</h2></button>
         }
 </div>
 
