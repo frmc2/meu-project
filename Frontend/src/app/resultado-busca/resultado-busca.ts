@@ -36,44 +36,64 @@ function distanciaEdicao(a: string, b: string): number {
   return linhaAnterior[b.length];
 }
 
-function palavraCorresponde(termo: string, palavra: string): boolean {
-  if (termo === palavra) return true;
+const errosPermitidos = (tamanho: number): number =>
+  tamanho <= 3 ? 0 : tamanho <= 5 ? 1 : 2;
 
-  // Permite procurar por partes do nome, como "salgadinh" em "salgadinho".
-  if (termo.length >= 3 && (palavra.includes(termo) || termo.includes(palavra))) {
-    return true;
-  }
+// Nota de um termo digitado contra uma palavra (0 = não casou)
+function pontuarTermo(termo: string, palavra: string): number {
+  if (termo === palavra) return 100;
+  if (palavra.startsWith(termo)) return 80; // digitação incompleta
+  if (termo.length >= 4 && palavra.includes(termo)) return 50;
 
-  // Tolerância pequena a erros de digitação, sem fazer buscas curtas
-  // combinarem com muitos produtos por acidente.
-  const errosPermitidos = termo.length <= 3 ? 0 : termo.length <= 5 ? 1 : 2;
-  return distanciaEdicao(termo, palavra) <= errosPermitidos;
+  const max = errosPermitidos(termo.length);
+  if (max === 0) return 0;
+
+  // compara com a palavra inteira e com o começo dela (incompleto + erro)
+  const dist = Math.min(
+    distanciaEdicao(termo, palavra),
+    distanciaEdicao(termo, palavra.slice(0, termo.length)),
+  );
+  return dist <= max ? 40 - dist * 10 : 0;
 }
 
-function produtoCorresponde(produto: Produto, buscaNormalizada: string): boolean {
-  if (!buscaNormalizada) return true;
+// Melhor nota de um termo entre as palavras de um texto
+function melhorNota(termo: string, palavras: string[]): number {
+  let melhor = 0;
+  for (const palavra of palavras) {
+    melhor = Math.max(melhor, pontuarTermo(termo, palavra));
+  }
+  return melhor;
+}
 
-  const textoProduto = normalizarTexto(
-    `${produto.nome} ${produto.categoria} ${produto.descricao}`,
-  );
-  const buscaCompacta = buscaNormalizada.replace(/\s/g, '');
-  const textoCompacto = textoProduto.replace(/\s/g, '');
-  const termos = buscaNormalizada.split(/\s+/).filter(Boolean);
+function pontuarProduto(produto: Produto, buscaNormalizada: string): number {
+  if (!buscaNormalizada) return 1;
 
-  // Também reconhece variações de separadores: "coca cola" / "coca-cola"
-  // e "kit kat" / "kitkat".
-  if (
-    termos.some((termo) => termo.length >= 3) &&
-    (textoProduto.includes(buscaNormalizada) || textoCompacto.includes(buscaCompacta))
-  ) {
-    return true;
+  const nome = normalizarTexto(produto.nome);
+  const palavrasNome = nome.split(' ').filter(Boolean);
+  const palavrasExtras = normalizarTexto(`${produto.categoria} ${produto.descricao}`)
+    .split(' ')
+    .filter(Boolean);
+  const termos = buscaNormalizada.split(' ').filter(Boolean);
+
+  // "coca cola" / "coca-cola" / "kitkat": compara sem espaços, só no nome
+  const buscaCompacta = buscaNormalizada.replace(/ /g, '');
+  if (buscaCompacta.length >= 4 && nome.replace(/ /g, '').includes(buscaCompacta)) {
+    return 120;
   }
 
-  const palavrasProduto = textoProduto.split(/\s+/).filter(Boolean);
+  let total = 0;
+  for (const termo of termos) {
+    const notaNome = melhorNota(termo, palavrasNome);
+    // categoria/descrição valem menos e só aceitam match exato ou por prefixo
+    const notaExtra = Math.floor(
+      melhorNota(termo, palavrasExtras.filter((p) => p === termo || p.startsWith(termo))) * 0.4,
+    );
 
-  return termos.every((termo) =>
-    palavrasProduto.some((palavra) => palavraCorresponde(termo, palavra)),
-  );
+    const nota = Math.max(notaNome, notaExtra);
+    if (nota === 0) return 0; // TODOS os termos precisam casar
+    total += nota;
+  }
+  return total / termos.length;
 }
 
 @Component({
@@ -90,25 +110,30 @@ export class ResultadoBusca {
   readonly produtos: Produto[] = produtos;
 
   readonly categoriaSelecionada = toSignal(
-    this.route.queryParamMap.pipe(map(params => params.get('categoria'))),
+    this.route.queryParamMap.pipe(map((params) => params.get('categoria'))),
     { initialValue: null },
   );
 
   readonly termoBusca = toSignal(
-    this.route.queryParamMap.pipe(map(params => params.get('q') ?? '')),
+    this.route.queryParamMap.pipe(map((params) => params.get('q') ?? '')),
     { initialValue: '' },
   );
 
   readonly produtosFiltrados = computed(() => {
     const categoria = this.categoriaSelecionada();
+    const categoriaNormalizada = categoria ? normalizarTexto(categoria) : '';
     const buscaNormalizada = normalizarTexto(this.termoBusca());
 
-    return this.produtos.filter((produto) => {
-      const categoriaCorresponde = !categoria ||
-        normalizarTexto(produto.categoria) === normalizarTexto(categoria);
-
-      return categoriaCorresponde && produtoCorresponde(produto, buscaNormalizada);
-    });
+    return this.produtos
+      .filter(
+        (produto) =>
+          !categoriaNormalizada ||
+          normalizarTexto(produto.categoria) === categoriaNormalizada,
+      )
+      .map((produto) => ({ produto, nota: pontuarProduto(produto, buscaNormalizada) }))
+      .filter((item) => item.nota > 0)
+      .sort((a, b) => b.nota - a.nota)
+      .map((item) => item.produto);
   });
 
   mensagemCesta = '';
